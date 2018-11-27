@@ -1,8 +1,8 @@
 package com.xinyuan.oauth.config.security;
 
-import com.xinyuan.oauth.entity.User;
 import com.xinyuan.oauth.service.UserRoleService;
 import com.xinyuan.oauth.service.UserService;
+import com.xinyuan.user.model.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -29,6 +29,8 @@ public class CloudUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private com.xinyuan.oauth.client.UserService userService1;
 
     @Autowired
     private UserRoleService userRoleService;
@@ -36,21 +38,22 @@ public class CloudUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = userService.findByUsername(username);
+//        User user = userService1.findByUsername(username);
+        UserDTO userDTO = userService1.findByUserName(username);
 
-        if (user == null) {
+        if (userDTO == null) {
             throw new UsernameNotFoundException("用户名：" + username + "不存在或已禁用！");
-        } else if (user.getStatus() == 2 || user.getDeleted() == 1) {
+        } else if (userDTO.getStatus() == 2 || userDTO.getDeleted() == 1) {
             throw new UsernameNotFoundException("用户名：" + username + "不存在或已禁用！");
         }
 
-        userService.updateUser(user);
+//        userService.updateUser(user);
         Collection<SimpleGrantedAuthority> collection = new HashSet<>();
 
-        Iterator<String> iterator = userRoleService.findRoles(user.getId()).iterator();
+        Iterator<String> iterator = userRoleService.findRoles(userDTO.getId()).iterator();
         while (iterator.hasNext()) {
             collection.add(new SimpleGrantedAuthority(iterator.next()));
         }
-        return new org.springframework.security.core.userdetails.User(username, passwordEncoder.encode(user.getPassword()), collection);
+        return new org.springframework.security.core.userdetails.User(username, passwordEncoder.encode(userDTO.getPassword()), collection);
     }
 }

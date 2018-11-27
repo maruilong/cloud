@@ -63,5 +63,5 @@ public class User implements Serializable {
 
     @ApiModelProperty(value = "删除标识 0未删除 1已删除", name = "deleted", example = "0")
     @Column(name = "deleted")
-    private Integer deleted;
+    private Integer deleted = 0;
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 /**
@@ -26,15 +27,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @RequestMapping("/user")
-//    public Principal user(Principal principal) {
-//
-//        User user = null;
-//        if (principal != null) {
-//            user = userService.findByUsername(principal.getName());
-//        }
-//        return principal;
-//    }
+    @RequestMapping("/user")
+    public Principal user(Principal principal) {
+
+        User user = null;
+        if (principal != null) {
+            user = userService.findByUsername(principal.getName());
+        }
+        return principal;
+    }
 
     @ApiOperation(value = "新增", notes = "新增")
     @ApiImplicitParam(name = "user", value = "user", required = true, dataType = "User")
