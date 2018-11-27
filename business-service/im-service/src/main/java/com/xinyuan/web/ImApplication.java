@@ -8,6 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * @author liang
  */
+//@EnableOAuth2Client
 @EnableEurekaClient
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class ImApplication {

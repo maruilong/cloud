@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.ChannelRegistration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.stereotype.Component;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
@@ -16,6 +17,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
  * 在webSocket连接成功先后我可以做的操作
  * 此注解表示使用STOMP协议来传输基于消息代理的消息，此时可以在@Controller类中使用@MessageMapping
  */
+@Component
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketMessageBrokerConfigurerImpl implements WebSocketMessageBrokerConfigurer {
@@ -25,9 +27,6 @@ public class WebSocketMessageBrokerConfigurerImpl implements WebSocketMessageBro
 
     @Autowired
     private MyChannelInterceptorAdapter channelInterceptorAdapter;
-
-    @Autowired
-    private WebSocketHandleInterceptor webSocketHandleInterceptor;
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
@@ -55,6 +54,7 @@ public class WebSocketMessageBrokerConfigurerImpl implements WebSocketMessageBro
                 // "STOMP broker relay"处理所有消息将消息发送到外部的消息代理
                 .enableStompBrokerRelay("/exchange", "/topic", "/queue", "/amq/queue")
                 .setRelayHost("192.168.1.189")
+//                .setRelayHost("5673")
                 .setClientLogin("mrl")
                 .setClientPasscode("shinian")
                 .setSystemLogin("mrl")
@@ -66,6 +66,7 @@ public class WebSocketMessageBrokerConfigurerImpl implements WebSocketMessageBro
     @Override
     public void configureClientInboundChannel(ChannelRegistration registration) {
         //消息过滤器 先不加 报错
+        WebSocketHandleInterceptor webSocketHandleInterceptor = new WebSocketHandleInterceptor();
         registration.interceptors(webSocketHandleInterceptor);
     }
 }
