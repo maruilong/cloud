@@ -1,0 +1,37 @@
+#---------------------------------------------
+server:
+  port: 1360
+#---------------------------------------------
+spring:
+  application:
+    name: oauth-service
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
+    username: root
+    password: xinyuan
+    driver-class-name: com.mysql.jdbc.Driver
+#---------------------------------------------
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1300/eureka/
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 10
+#---------------------------------------------
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+#---------------------------------------------
+

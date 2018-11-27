@@ -2,8 +2,8 @@ package com.xinyuan.base.common.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.Assert;
-import org.springframework.util.StringUtils;
 
 import java.lang.reflect.*;
 
