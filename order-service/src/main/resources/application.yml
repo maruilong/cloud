@@ -1,0 +1,11 @@
+server:
+  port: 1344 #端口
+  context-path: /order #请求路径前缀
+spring:
+  application:
+    name: order-service #服务名
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1340/eureka/  #注册中心地址
+
