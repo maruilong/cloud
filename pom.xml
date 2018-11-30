@@ -12,6 +12,7 @@
         <module>registry</module>
         <module>order-service</module>
         <module>feign</module>
+        <module>auth-server</module>
     </modules>
 
     <parent>
