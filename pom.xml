@@ -13,6 +13,7 @@
         <module>order-service</module>
         <module>feign</module>
         <module>auth-server</module>
+        <module>sso-service</module>
     </modules>
 
     <parent>
@@ -52,6 +53,13 @@
             <version>1.16.14</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

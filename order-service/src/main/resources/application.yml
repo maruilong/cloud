@@ -1,3 +1,4 @@
+auth-server: http://localhost:1345/sso # sso-server地址
 server:
   port: 1344 #端口
   context-path: /order #请求路径前缀
@@ -9,3 +10,14 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:1340/eureka/  #注册中心地址
 
+security:
+  oauth2:
+    client:
+      client-id: xinyuan
+      client-secret: xinyuan1525
+      user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
+      access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
+    resource:
+      id: order-service
+      user-info-uri: ${auth-server}/user
+      prefer-token-info: true
