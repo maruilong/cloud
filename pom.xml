@@ -13,6 +13,8 @@
         <module>order-service</module>
         <module>feign</module>
         <module>auth-server</module>
+        <module>gateway</module>
+        <module>test-server</module>
     </modules>
 
     <parent>

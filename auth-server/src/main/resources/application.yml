@@ -41,7 +41,7 @@ spring:
     template-loader-path: classpath:/
 
   application:
-    name: sso
+    name: sso-server
 
 eureka:
   client:

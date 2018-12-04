@@ -18,8 +18,10 @@ security:
       user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
       access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
     resource:
-      id: order-service
-      user-info-uri: ${auth-server}/user
-      prefer-token-info: true
-    sso:
-      login-path: /login
+      jwt:
+        key-uri: ${auth-server}/oauth/token_key #解析jwt令牌所需要密钥的地址
+    #      id: order-service
+#      user-info-uri: ${auth-server}/user
+#      prefer-token-info: true
+#    sso:
+#      login-path: /login
