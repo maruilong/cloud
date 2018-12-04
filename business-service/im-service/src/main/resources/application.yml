@@ -22,8 +22,8 @@ eureka:
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 10
 #---------------------------------------------
-security:
-  oauth2:
-    resource:
-      id: ${spring.application.name}
-      user-info-uri: http://192.168.1.10:1530/user
+#security:
+#  oauth2:
+#    resource:
+#      id: ${spring.application.name}
+#      user-info-uri: http://192.168.1.10:1360/user

@@ -2,6 +2,8 @@ package com.xinyuan.web.response;
 
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * @author liang
  */
@@ -10,7 +12,7 @@ public class ResponseMessage {
 
     private String sender;
 
-    private String content;
+    private Map<String, Object> content;
 
     private String name;
 }
