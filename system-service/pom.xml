@@ -18,7 +18,6 @@
         <module>registry</module>
         <module>monitor</module>
         <module>tx-manager</module>
-        <module>config</module>
         <module>gateway</module>
         <module>oauth-server</module>
     </modules>
