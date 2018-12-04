@@ -16,6 +16,7 @@
         <module>search-service</module>
         <module>stream-service</module>
         <module>sidecar-php-service</module>
+        <module>upload-service</module>
     </modules>
 
 </project>

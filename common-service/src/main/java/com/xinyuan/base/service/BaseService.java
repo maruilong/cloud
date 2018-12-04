@@ -6,7 +6,9 @@ import com.xinyuan.base.common.service.ParamCondition;
 import com.xinyuan.base.common.service.SelectParam;
 import com.xinyuan.base.common.util.EntityUtils;
 import com.xinyuan.base.common.util.ReflectionUtils;
+import com.xinyuan.base.common.util.ResultUtil;
 import com.xinyuan.base.common.web.Conditions;
+import com.xinyuan.base.common.web.Message;
 import com.xinyuan.base.common.web.PageBody;
 import com.xinyuan.base.mapper.BaseJpaRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -17,13 +19,18 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * 基础Service层
@@ -313,5 +320,55 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
         }
         return sort;
     }
+    public Message upload(MultipartFile file) throws Exception {
+        String url;
+        String saveDirectoryPath;
 
-}
+        String osName = System.getProperties().getProperty("os.name");
+        if (osName.equals("Linux")) {
+            saveDirectoryPath = "/DATA/WEB/www/upload";
+            url = "/upload";
+        } else {
+            saveDirectoryPath = "d:/images\\";
+            url = "d:/images";
+        }
+
+        File saveDirectory = new File(saveDirectoryPath);
+
+        if (!saveDirectory.isDirectory() && !saveDirectory.exists()) {
+            saveDirectory.mkdirs();
+        }
+
+        String uuid = UUID.randomUUID().toString();
+        StringBuilder name;
+        String fileName = file.getOriginalFilename();
+
+        if (StringUtils.isEmpty(file)) {
+            return ResultUtil.error(2001, "图片格式不对");
+        }
+
+        if (file.isEmpty()) {
+            return ResultUtil.error(1007, "文件为空");
+        }
+
+        String suffix = org.apache.commons.lang.StringUtils.substringAfterLast(fileName, ".");
+
+        FileOutputStream out = null;
+
+        //if (suffix.equals("png") || suffix.equals("jpg") || suffix.equals("jpeg") || suffix.equals("bmp") || suffix.equals("psd")||suffix.equals("mp4")||suffix.equals("ogg")||suffix.equals("webm")) {
+        name = new StringBuilder("/" + uuid + ".");
+        name.append(suffix);
+        log.info(name + "");
+        out = new FileOutputStream(saveDirectoryPath + name.toString());
+        url = url + name.toString();
+        /*} else {
+            name = new StringBuilder("/" + fileName);
+            out = new FileOutputStream(saveDirectoryPath + name.toString());
+            url = url + name.toString();
+        }*/
+        out.write(file.getBytes());
+        out.flush();
+        out.close();
+
+        return ResultUtil.success(url);
+    }}
