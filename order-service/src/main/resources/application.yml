@@ -1,4 +1,4 @@
-auth-server: http://localhost:1345/sso # sso-server地址
+auth-server: http://localhost:1343/sso # sso-server地址
 server:
   port: 1344 #端口
   context-path: /order #请求路径前缀
@@ -21,3 +21,5 @@ security:
       id: order-service
       user-info-uri: ${auth-server}/user
       prefer-token-info: true
+    sso:
+      login-path: /login

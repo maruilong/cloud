@@ -25,6 +25,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private AuthenticationManager authenticationManager;
     @Autowired
     private RedisConnectionFactory connectionFactory;
+    @Autowired
+    private SsoUserDetailsService userDetailsService;
 
     /**
      * 客户端一些配置
@@ -57,6 +59,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints
                 .authenticationManager(authenticationManager)
+                .userDetailsService(userDetailsService)
                 .tokenStore(tokenStore());
     }
 

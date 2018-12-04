@@ -10,9 +10,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  *
  * @author liang
  */
+@EnableOAuth2Sso
 @EnableEurekaClient
 @SpringBootApplication
-@EnableOAuth2Sso
 public class OrderApplication {
 
     public static void main(String[] args) {

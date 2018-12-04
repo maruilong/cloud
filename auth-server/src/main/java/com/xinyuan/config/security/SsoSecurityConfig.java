@@ -1,15 +1,11 @@
 package com.xinyuan.config.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.provider.ClientDetailsService;
 
 /**
  * spring Security配置
@@ -20,15 +16,6 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
  */
 @Configuration
 public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    private UserDetailsService userDetailsService;
-//
-//    @Autowired
-//    private RedisConnectionFactory redisConnection;
-
-    @Autowired
-    private ClientDetailsService clientDetailsService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -43,8 +30,8 @@ public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests()
                 .antMatchers("/authentication/require",
                         "/authentication/form",
+                        "/user",
                         "/index",
-                        "/user/me",
                         "/**/*.js",
                         "/**/*.css",
                         "/**/*.jpg",
@@ -53,16 +40,7 @@ public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.woff2"
                 )
                 .permitAll()
-                .antMatchers("/sso/test").hasRole("ROLE")
-                .anyRequest().authenticated()
                 .and()
                 .csrf().disable();
-//        http.formLogin().and().authorizeRequests().anyRequest().authenticated();
     }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-    }
-
 }

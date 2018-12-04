@@ -13,7 +13,6 @@
         <module>order-service</module>
         <module>feign</module>
         <module>auth-server</module>
-        <module>sso-service</module>
     </modules>
 
     <parent>
