@@ -1,4 +1,4 @@
-package com.xinyuan.circle.config.security;
+package com.xinyuan.base.config.security;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

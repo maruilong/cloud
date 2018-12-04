@@ -27,7 +27,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/user")
+    @RequestMapping(value = "user", method = RequestMethod.GET)
     public Principal user(Principal principal) {
 
         User user = null;
