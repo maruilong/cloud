@@ -1,0 +1,13 @@
+server:
+    port: 1500
+spring:
+  application:
+    name: im-server
+  mvc:
+    view:
+      prefix: /WEB-INF/page/
+      suffix: .jsp
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1340/eureka/  #注册中心地址
