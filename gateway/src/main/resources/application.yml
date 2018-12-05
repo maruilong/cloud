@@ -6,8 +6,17 @@ spring:
   application:
     name: gateway
 server:
-  port: 1500
+  port: 1600
 #  context-path: /gateway
 zuul:
   routes:
     test-server: /test/**
+    order-service: /order/**
+  host:
+    max-per-route-connections: 20
+    max-total-connections: 200
+    socket-timeout-millis: 3000
+  ribbon-isolation-strategy: semaphore
+hystrix:
+  metrics:
+    polling-interval-ms: 3000

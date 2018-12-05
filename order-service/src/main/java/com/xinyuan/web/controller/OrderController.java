@@ -15,8 +15,8 @@ import java.security.Principal;
 public class OrderController {
 
     @GetMapping("/queryOrder")
-    public String queryOrder(@RequestParam String name, Principal principal) {
-        System.out.println(principal);
+    public String queryOrder(@RequestParam String name) {
+//        System.out.println(principal);
         log.info(this.getClass().getSimpleName());
         return name + "订单系统";
     }

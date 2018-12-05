@@ -25,3 +25,6 @@ security:
 #      prefer-token-info: true
 #    sso:
 #      login-path: /login
+ribbon:
+  eureka:
+    enable: true

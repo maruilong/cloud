@@ -21,6 +21,6 @@ security:
       user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
       access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
     resource:
-      id: order-service
+#      id: order-service
       user-info-uri: ${auth-server}/user
       prefer-token-info: true
