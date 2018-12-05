@@ -48,24 +48,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .autoApprove(true);
     }
 
-//    /**
-//     * 配置redis Token Store toekn仓库
-//     *
-//     * @return
-//     */
-//    @Bean
-//    public RedisTokenStore tokenStore() {
-//        return new RedisTokenStore(connectionFactory);
-//    }
-//
-//
-//    @Override
-//    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-//        endpoints
-//                .authenticationManager(authenticationManager)
-//                .userDetailsService(userDetailsService)
-//                .tokenStore(tokenStore());
-//    }
 
     /**
      * 配置jwttokenStore
@@ -103,9 +85,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter(){
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey("hwz");
+        converter.setSigningKey("xinyuan");
         return converter;
     }
-
 
 }
