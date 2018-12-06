@@ -25,13 +25,6 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-    @Autowired
-    private RedisConnectionFactory connectionFactory;
-    @Autowired
-    private SsoUserDetailsService userDetailsService;
-
     /**
      * 客户端一些配置
      *
