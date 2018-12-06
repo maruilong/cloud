@@ -16,6 +16,8 @@
         <module>gateway</module>
         <module>test-server</module>
         <module>im-server</module>
+        <module>producer-service</module>
+        <module>consumer-service</module>
     </modules>
 
     <parent>
