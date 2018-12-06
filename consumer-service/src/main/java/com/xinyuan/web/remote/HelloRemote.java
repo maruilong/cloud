@@ -1,5 +1,6 @@
 package com.xinyuan.web.remote;
 
+import com.xinyuan.web.fallback.HelloRemoteFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * @author liang
  */
-@FeignClient(name = "producer-service")
+@FeignClient(name = "producer-service", fallback = HelloRemoteFallback.class)
 public interface HelloRemote {
     /**
      * 远程调用方法
