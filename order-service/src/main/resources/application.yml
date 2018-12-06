@@ -1,7 +1,7 @@
 auth-server: http://localhost:1343/sso # sso-server地址
 server:
   port: 1344 #端口
-  context-path: /order #请求路径前缀
+#  context-path: /order #请求路径前缀
 spring:
   application:
     name: order-service #服务名
@@ -9,6 +9,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1340/eureka/  #注册中心地址
+#  instance:
+#    hostname: localhost
+#    instance-id: http://localhost:1344/order
 
 security:
   oauth2:
@@ -25,6 +28,3 @@ security:
 #      prefer-token-info: true
 #    sso:
 #      login-path: /login
-ribbon:
-  eureka:
-    enable: true

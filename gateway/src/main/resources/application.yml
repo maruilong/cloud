@@ -10,13 +10,26 @@ server:
 #  context-path: /gateway
 zuul:
   routes:
-    test-server: /test/**
-    order-service: /order/**
-  host:
-    max-per-route-connections: 20
-    max-total-connections: 200
-    socket-timeout-millis: 3000
-  ribbon-isolation-strategy: semaphore
-hystrix:
-  metrics:
-    polling-interval-ms: 3000
+    test-server:
+      path: /test/**
+      service-id: test-server
+    order-service:
+      path: /order/**
+      service-id: order-service
+  sensitive-headers:
+#      sensitiveHeaders:
+#      serviceId:  order-service
+  add-proxy-headers: true
+  add-host-header: true
+
+#auth-server: http://localhost:1343/sso # sso-server地址
+#security:
+#  oauth2:
+#    client:
+#      client-id: xinyuan
+#      client-secret: xinyuan1525
+#      user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
+#      access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
+#    resource:
+#      jwt:
+#        key-uri: ${auth-server}/oauth/token_key #解析jwt令牌所需要密钥的地址
