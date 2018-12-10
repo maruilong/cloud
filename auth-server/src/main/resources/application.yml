@@ -20,6 +20,8 @@ spring:
   jpa:
     generate-ddl: false
     show-sql: true
+    hibernate:
+      ddl-auto: update
 
   datasource:
     url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false

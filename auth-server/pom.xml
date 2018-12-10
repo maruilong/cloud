@@ -53,4 +53,7 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>auth-server</finalName>
+    </build>
 </project>

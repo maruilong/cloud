@@ -23,4 +23,9 @@ public class LoginController {
     public ModelAndView index() {
         return new ModelAndView("ftl/index");
     }
+
+    @GetMapping("/")
+    public ModelAndView index1() {
+        return new ModelAndView("ftl/index");
+    }
 }
