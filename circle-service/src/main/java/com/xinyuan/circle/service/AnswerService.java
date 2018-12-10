@@ -1,9 +1,13 @@
 package com.xinyuan.circle.service;
 
+import com.xinyuan.base.common.web.Constants;
+import com.xinyuan.base.entity.Relation;
+import com.xinyuan.circle.client.RelationClient;
 import com.xinyuan.circle.entity.Answer;
 import com.xinyuan.circle.entity.Comment;
 import com.xinyuan.circle.entity.Topic;
 import com.xinyuan.circle.mapper.AnswerRepository;
+import com.xinyuan.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +31,8 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
     private UserService userService;
     @Autowired
     private CommentService commentService;
-
+    @Autowired
+    private RelationClient relationClient;
 
     public void removeAnswer(List<Long> ids) {
         for (Long i : ids) {
@@ -57,6 +62,17 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
         Topic topic = topicService.findById(answer.getTopicId());
         topic.setAnswers(topic.getAnswers() + 1);
         topicService.update(topic);
+
+        Relation relation = new Relation();
+
+        relation.setSrcUser((long) 1);
+        relation.setSrcType(Constants.USER);
+        relation.setActionType(Constants.REPLY);
+        relation.setTargetId(answer.getId());
+        relation.setTargetType(Constants.ANSWER);
+
+        relationClient.add(relation);
+
 
         return answer;
     }

@@ -21,6 +21,7 @@
         <module>circle-service</module>
         <module>common-service</module>
         <module>api-gateway</module>
+        <module>relation-service</module>
     </modules>
 
     <parent>

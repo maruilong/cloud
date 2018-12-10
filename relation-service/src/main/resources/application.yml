@@ -1,5 +1,5 @@
 server:
-  port: 1601
+  port: 1602
 spring:
   jpa:
     generate-ddl: false
@@ -14,7 +14,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
   application:
-    name: circle-service
+    name: relation-service
 
 eureka:
   client:
@@ -22,4 +22,4 @@ eureka:
       defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
   instance:
     hostname: localhost
-    instance-id: http://localhost:1601
+    instance-id: http://localhost:1602

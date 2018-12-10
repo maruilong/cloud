@@ -2,6 +2,7 @@ package com.xinyuan.circle.service;
 
 import com.xinyuan.circle.entity.Auth;
 import com.xinyuan.circle.mapper.AuthRepository;
+import com.xinyuan.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,6 +2,7 @@ package com.xinyuan.circle.service;
 
 import com.xinyuan.circle.entity.Comment;
 import com.xinyuan.circle.mapper.CommentRepository;
+import com.xinyuan.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

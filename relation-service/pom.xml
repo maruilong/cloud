@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>circle-service</artifactId>
+    <artifactId>relation-service</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.xinyuan</groupId>
@@ -46,13 +47,9 @@
             <version>2.6.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>circle-service</finalName>
+        <finalName>relation-service</finalName>
     </build>
 </project>

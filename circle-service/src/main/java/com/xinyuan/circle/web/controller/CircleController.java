@@ -1,8 +1,8 @@
 package com.xinyuan.circle.web.controller;
 
-import com.xinyuan.circle.common.util.ResultUtil;
-import com.xinyuan.circle.common.web.Message;
-import com.xinyuan.circle.common.web.PageBody;
+import com.xinyuan.base.common.util.ResultUtil;
+import com.xinyuan.base.common.web.Message;
+import com.xinyuan.base.common.web.PageBody;
 import com.xinyuan.circle.entity.Circle;
 import com.xinyuan.circle.service.CircleService;
 import io.swagger.annotations.Api;
@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Api(description = "话题种类管理")
 @RestController
-@RequestMapping("/backstage/circle")
+@RequestMapping("/circle")
 public class CircleController {
 
     @Autowired

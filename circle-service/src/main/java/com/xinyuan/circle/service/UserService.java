@@ -1,9 +1,10 @@
 package com.xinyuan.circle.service;
 
-import com.xinyuan.circle.common.service.ParamCondition;
-import com.xinyuan.circle.common.service.SelectParam;
+import com.xinyuan.base.common.service.ParamCondition;
+import com.xinyuan.base.common.service.SelectParam;
 import com.xinyuan.circle.entity.User;
 import com.xinyuan.circle.mapper.UserRepository;
+import com.xinyuan.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

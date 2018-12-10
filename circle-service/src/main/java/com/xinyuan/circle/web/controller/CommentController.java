@@ -1,8 +1,8 @@
 package com.xinyuan.circle.web.controller;
 
-import com.xinyuan.circle.common.util.ResultUtil;
-import com.xinyuan.circle.common.web.Message;
-import com.xinyuan.circle.common.web.PageBody;
+import com.xinyuan.base.common.util.ResultUtil;
+import com.xinyuan.base.common.web.Message;
+import com.xinyuan.base.common.web.PageBody;
 import com.xinyuan.circle.entity.Comment;
 import com.xinyuan.circle.service.CommentService;
 import io.swagger.annotations.Api;

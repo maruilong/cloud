@@ -1,6 +1,7 @@
 package com.xinyuan.circle.mapper;
 
 import com.xinyuan.circle.entity.Comment;
+import com.xinyuan.base.mapper.BaseJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

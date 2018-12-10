@@ -31,7 +31,7 @@ public class Comment implements Serializable {
     private String images;
 
     @ApiModelProperty(value = "点赞数量", name = "likes", example = "0")
-    @Column(name = "likes",columnDefinition = "INT DEFUALT 0")
+    @Column(name = "likes",columnDefinition = "INT DEFAULT 0")
     private Integer likes;
 
     @ApiModelProperty(value = "评论数量", name = "comments", example = "0")
