@@ -1,0 +1,23 @@
+server:
+  port: 1601
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+
+  datasource:
+    url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false
+    username: root
+    password: xinyuan
+    driver-class-name: com.mysql.jdbc.Driver
+
+  application:
+    name: circle-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1340/eureka/  #注册中心地址
+  instance:
+    hostname: localhost
+    instance-id: http://localhost:1601

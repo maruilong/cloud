@@ -16,6 +16,11 @@
         <module>gateway</module>
         <module>producer-service</module>
         <module>consumer-service</module>
+        <module>client1-server</module>
+        <module>client2-server</module>
+        <module>circle-service</module>
+        <module>common-service</module>
+        <module>api-gateway</module>
         <module>api-gateway</module>
     </modules>
 

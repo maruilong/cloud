@@ -10,17 +10,20 @@ server:
 #  context-path: /gateway
 zuul:
   routes:
-    test-server:
-      path: /test/**
-      service-id: test-server
     order-service:
       path: /order/**
       service-id: order-service
+    client1-server:
+      path: /client1/**
+      service-id: client1-server
+    client2-server:
+      path: /client2/**
+      service-id: client2-server
   sensitive-headers:
 #      sensitiveHeaders:
 #      serviceId:  order-service
-  add-proxy-headers: true
-  add-host-header: true
+#  add-proxy-headers: true
+#  add-host-header: true
 
 #auth-server: http://localhost:1343/sso # sso-server地址
 #security:
