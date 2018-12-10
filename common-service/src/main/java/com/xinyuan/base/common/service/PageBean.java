@@ -1,4 +1,4 @@
-package com.xinyuan.common.service;
+package com.xinyuan.base.common.service;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

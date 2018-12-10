@@ -1,7 +1,7 @@
-package com.xinyuan.common.util;
+package com.xinyuan.base.common.util;
 
 
-import com.xinyuan.common.web.Message;
+import com.xinyuan.base.common.web.Message;
 
 /**
  * @Author: hwz

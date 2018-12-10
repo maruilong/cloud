@@ -1,4 +1,4 @@
-package com.xinyuan.mapper;
+package com.xinyuan.base.mapper;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

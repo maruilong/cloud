@@ -1,4 +1,4 @@
-package com.xinyuan.common.util;
+package com.xinyuan.base.common.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.Validate;

@@ -1,4 +1,4 @@
-package com.xinyuan.common.util;
+package com.xinyuan.base.common.util;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.domain.Page;

@@ -1,9 +1,7 @@
-package com.xinyuan.common.web;
+package com.xinyuan.base.common.web;
 
-import com.xinyuan.c.common.web.Conditions;
-import com.xinyuan.common.service.Order;
-import com.xinyuan.common.service.PageBean;
-import com.xinyuan.common.web.Conditions;
+import com.xinyuan.base.common.service.Order;
+import com.xinyuan.base.common.service.PageBean;
 import lombok.Data;
 
 import java.util.ArrayList;

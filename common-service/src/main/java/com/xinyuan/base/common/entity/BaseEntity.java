@@ -1,4 +1,4 @@
-package com.xinyuan.common.entity;
+package com.xinyuan.base.common.entity;
 
 import lombok.Data;
 

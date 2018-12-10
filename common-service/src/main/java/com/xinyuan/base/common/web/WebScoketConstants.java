@@ -1,4 +1,4 @@
-package com.xinyuan.common.web;
+package com.xinyuan.base.common.web;
 
 /**
  * WebScoket常量

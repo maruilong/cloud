@@ -1,4 +1,4 @@
-package com.xinyuan.common.util;
+package com.xinyuan.base.common.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;

@@ -1,15 +1,15 @@
-package com.xinyuan.service;
+package com.xinyuan.base.service;
 
 import com.thoughtworks.xstream.core.BaseException;
-import com.xinyuan.common.service.Order;
-import com.xinyuan.common.service.PageBean;
-import com.xinyuan.common.service.ParamCondition;
-import com.xinyuan.common.service.SelectParam;
-import com.xinyuan.common.util.EntityUtils;
-import com.xinyuan.common.util.ReflectionUtils;
-import com.xinyuan.common.web.Conditions;
-import com.xinyuan.common.web.PageBody;
-import com.xinyuan.mapper.BaseJpaRepository;
+import com.xinyuan.base.common.service.Order;
+import com.xinyuan.base.common.service.PageBean;
+import com.xinyuan.base.common.service.ParamCondition;
+import com.xinyuan.base.common.service.SelectParam;
+import com.xinyuan.base.common.util.EntityUtils;
+import com.xinyuan.base.common.util.ReflectionUtils;
+import com.xinyuan.base.common.web.Conditions;
+import com.xinyuan.base.common.web.PageBody;
+import com.xinyuan.base.mapper.BaseJpaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

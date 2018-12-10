@@ -1,4 +1,4 @@
-package com.xinyuan.common.util;
+package com.xinyuan.base.common.util;
 
 import java.text.NumberFormat;
 import java.text.ParseException;

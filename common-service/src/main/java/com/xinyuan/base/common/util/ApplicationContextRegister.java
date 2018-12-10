@@ -1,4 +1,4 @@
-package com.xinyuan.common.util;
+package com.xinyuan.base.common.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

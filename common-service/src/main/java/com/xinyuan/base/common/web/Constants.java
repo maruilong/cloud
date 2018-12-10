@@ -1,4 +1,4 @@
-package com.xinyuan.common.web;
+package com.xinyuan.base.common.web;
 
 /**
  * @Author: hwz

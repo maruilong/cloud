@@ -1,7 +1,5 @@
-package com.xinyuan.common.service;
+package com.xinyuan.base.common.service;
 
-import com.xinyuan.c.common.service.ParamCondition;
-import com.xinyuan.common.service.ParamCondition;
 import lombok.Data;
 
 /**

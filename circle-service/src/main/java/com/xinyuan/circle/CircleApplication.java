@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan(basePackages = {"com.xinyuan.circle", "com.xinyuan.c"})
+@ComponentScan(basePackages = {"com.xinyuan.circle", "com.xinyuan.base"})
 public class CircleApplication {
 
     public static void main(String[] args) {

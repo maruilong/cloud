@@ -1,7 +1,5 @@
-package com.xinyuan.common.util;
+package com.xinyuan.base.common.util;
 
-import com.xinyuan.c.common.util.ReflectionUtils;
-import com.xinyuan.common.util.ReflectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
