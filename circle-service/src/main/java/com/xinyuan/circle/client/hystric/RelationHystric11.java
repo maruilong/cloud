@@ -1,7 +1,7 @@
-package com.xinyuan.circle.hystric;
+package com.xinyuan.circle.client.hystric;
 
 import com.xinyuan.base.entity.Relation;
-import com.xinyuan.circle.client.RelationClient;
+import com.xinyuan.circle.client.RelationClient1;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author liang
  */
 @Component
-public class RelationHystric implements RelationClient {
+public class RelationHystric11 implements RelationClient1 {
     @Override
     public ResponseEntity<Relation> add(@RequestBody Relation relation) {
 

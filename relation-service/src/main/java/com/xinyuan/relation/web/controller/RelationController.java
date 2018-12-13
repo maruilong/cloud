@@ -35,4 +35,9 @@ public class RelationController {
         return ResponseEntity.ok(relation);
     }
 
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+    public ResponseEntity<String> add() {
+
+        return ResponseEntity.ok("relation test 接口");
+    }
 }

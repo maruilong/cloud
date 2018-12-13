@@ -22,6 +22,7 @@
         <module>common-service</module>
         <module>api-gateway</module>
         <module>relation-service</module>
+        <module>relation-service-api</module>
     </modules>
 
     <parent>

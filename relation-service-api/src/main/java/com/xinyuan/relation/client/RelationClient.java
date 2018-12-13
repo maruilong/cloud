@@ -1,13 +1,13 @@
-package com.xinyuan.circle.client;
+package com.xinyuan.relation.client;
 
-import com.xinyuan.base.entity.Relation;
-import com.xinyuan.circle.hystric.RelationHystric;
+import com.xinyuan.relation.client.hystric.RelationHystric;
+import com.xinyuan.relation.model.dto.Relation;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 /**

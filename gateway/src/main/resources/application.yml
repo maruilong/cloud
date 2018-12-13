@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1340/eureka/  #注册中心地址
+      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
 spring:
   application:
     name: gateway
@@ -19,20 +19,15 @@ zuul:
     client2-server:
       path: /client2/**
       service-id: client2-server
+    relation-service:
+      path: /relation/**
+      service-id: relation-service
+    circle-service:
+      path: /circle/**
+      service-id: circle-service
   sensitive-headers:
+
 #      sensitiveHeaders:
 #      serviceId:  order-service
 #  add-proxy-headers: true
 #  add-host-header: true
-
-#auth-server: http://localhost:1343/sso # sso-server地址
-#security:
-#  oauth2:
-#    client:
-#      client-id: xinyuan
-#      client-secret: xinyuan1525
-#      user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
-#      access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
-#    resource:
-#      jwt:
-#        key-uri: ${auth-server}/oauth/token_key #解析jwt令牌所需要密钥的地址

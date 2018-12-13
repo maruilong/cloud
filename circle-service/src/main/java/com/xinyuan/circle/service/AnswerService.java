@@ -2,7 +2,7 @@ package com.xinyuan.circle.service;
 
 import com.xinyuan.base.common.web.Constants;
 import com.xinyuan.base.entity.Relation;
-import com.xinyuan.circle.client.RelationClient;
+import com.xinyuan.circle.client.RelationClient1;
 import com.xinyuan.circle.entity.Answer;
 import com.xinyuan.circle.entity.Comment;
 import com.xinyuan.circle.entity.Topic;
@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -32,7 +33,7 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
     @Autowired
     private CommentService commentService;
     @Autowired
-    private RelationClient relationClient;
+    private RelationClient1 relationClient1;
 
     public void removeAnswer(List<Long> ids) {
         for (Long i : ids) {
@@ -49,19 +50,21 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
 
 
     public List<Answer> findByTopicId(Long id) {
-        return answerRepository.findByTopicIdAndDeleted(id,0);
+        return answerRepository.findByTopicIdAndDeleted(id, 0);
     }
 
     public Answer findTopByTopicIdOrderByLikes(Long id) {
-        return answerRepository.findTopByTopicIdAndDeletedOrderByLikesDesc(id,0);
+        return answerRepository.findTopByTopicIdAndDeletedOrderByLikesDesc(id, 0);
     }
 
     @Transactional
     public Answer saveAnswer(Answer answer) {
+        long millis = System.currentTimeMillis();
+
         answer = save(answer);
-        Topic topic = topicService.findById(answer.getTopicId());
-        topic.setAnswers(topic.getAnswers() + 1);
-        topicService.update(topic);
+//        Topic topic = topicService.findById(answer.getTopicId());
+//        topic.setAnswers(topic.getAnswers() + 1);
+//        topicService.update(topic);
 
         Relation relation = new Relation();
 
@@ -71,9 +74,11 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
         relation.setTargetId(answer.getId());
         relation.setTargetType(Constants.ANSWER);
 
-        relationClient.add(relation);
+        relationClient1.add(relation);
+        long milliss = System.currentTimeMillis();
 
-
+        String str = (milliss - millis) + "";
+        System.out.println("耗时:" + str + "毫秒");
         return answer;
     }
 

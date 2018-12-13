@@ -1,12 +1,12 @@
 package com.xinyuan.circle.service;
 
 import com.xinyuan.base.common.web.Constants;
-import com.xinyuan.base.entity.Relation;
-import com.xinyuan.circle.client.RelationClient;
 import com.xinyuan.circle.entity.Answer;
 import com.xinyuan.circle.entity.Topic;
 import com.xinyuan.circle.mapper.TopicRepository;
 import com.xinyuan.base.service.BaseService;
+import com.xinyuan.relation.client.RelationClient;
+import com.xinyuan.relation.model.dto.Relation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
