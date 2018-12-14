@@ -6,7 +6,7 @@ import com.xinyuan.circle.entity.Topic;
 import com.xinyuan.circle.mapper.TopicRepository;
 import com.xinyuan.base.service.BaseService;
 import com.xinyuan.relation.client.RelationClient;
-import com.xinyuan.relation.model.dto.Relation;
+import com.xinyuan.relation.model.dto.RelationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,16 +33,16 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
     public Topic saveTopic(Topic topic) {
         topic = save(topic);
 
-        Relation relation = new Relation();
+        RelationDTO relationDTO = new RelationDTO();
 
-        relation.setSrcUser((long) 1);
-        relation.setSrcType(Constants.USER);
-        relation.setActionType(Constants.ISSUE);
-        relation.setTargetId(topic.getId());
-        relation.setTargetType(Constants.TOPIC);
-        relation.setDeleted(0);
+        relationDTO.setSrcUser((long) 1);
+        relationDTO.setSrcType(Constants.USER);
+        relationDTO.setActionType(Constants.ISSUE);
+        relationDTO.setTargetId(topic.getId());
+        relationDTO.setTargetType(Constants.TOPIC);
+        relationDTO.setDeleted(0);
 
-        relationClient.add(relation);
+        relationClient.add(relationDTO);
 
         return topic;
     }

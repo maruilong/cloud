@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.xinyuan</groupId>
-            <artifactId>relation-service-api</artifactId>
+            <artifactId>relationDTO-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

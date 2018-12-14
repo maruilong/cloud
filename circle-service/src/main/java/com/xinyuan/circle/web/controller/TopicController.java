@@ -5,6 +5,7 @@ import com.xinyuan.base.common.web.Message;
 import com.xinyuan.base.common.web.PageBody;
 import com.xinyuan.circle.entity.Topic;
 import com.xinyuan.circle.service.TopicService;
+import com.xinyuan.relation.client.HelloClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -29,6 +30,9 @@ public class TopicController {
 
     @Autowired
     private TopicService topicService;
+
+    @Autowired
+    private HelloClient helloClient;
 
     @ApiOperation(value = "新增话题", notes = "新增话题")
     @ApiImplicitParam(name = "topic", value = "topic", required = true, dataType = "Topic")
@@ -81,6 +85,19 @@ public class TopicController {
             e.printStackTrace();
         }
         return ResponseEntity.ok(page);
+    }
+
+
+    /**
+     * 条件查询
+     *
+     * @param pageBody
+     * @return
+     */
+    @ApiOperation(value = "条件查询", notes = "条件查询")
+    @RequestMapping(value = "hello", method = RequestMethod.POST)
+    public ResponseEntity<String> query(@RequestBody String name) {
+        return helloClient.add(name);
     }
 
 }

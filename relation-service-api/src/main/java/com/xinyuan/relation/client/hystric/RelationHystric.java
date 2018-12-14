@@ -1,7 +1,8 @@
 package com.xinyuan.relation.client.hystric;
 
 import com.xinyuan.relation.client.RelationClient;
-import com.xinyuan.relation.model.dto.Relation;
+import com.xinyuan.relation.model.dto.RelationDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
  *
  * @author liang
  */
+@Slf4j
 @Component
 public class RelationHystric implements RelationClient {
     @Override
-    public ResponseEntity<Relation> add(@RequestBody Relation relation) {
+    public ResponseEntity<RelationDTO> add(@RequestBody RelationDTO relationDTO) {
 
-        return ResponseEntity.ok(relation);
+        log.error("relation 保存出错 " + relationDTO);
+        return ResponseEntity.ok(relationDTO);
     }
 }

@@ -2,17 +2,16 @@ package com.xinyuan.circle.service;
 
 import com.xinyuan.base.common.web.Constants;
 import com.xinyuan.base.entity.Relation;
-import com.xinyuan.circle.client.RelationClient1;
 import com.xinyuan.circle.entity.Answer;
 import com.xinyuan.circle.entity.Comment;
-import com.xinyuan.circle.entity.Topic;
 import com.xinyuan.circle.mapper.AnswerRepository;
 import com.xinyuan.base.service.BaseService;
+import com.xinyuan.relation.client.RelationClient;
+import com.xinyuan.relation.model.dto.RelationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,7 +32,7 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
     @Autowired
     private CommentService commentService;
     @Autowired
-    private RelationClient1 relationClient1;
+    private RelationClient relationClient;
 
     public void removeAnswer(List<Long> ids) {
         for (Long i : ids) {
@@ -66,7 +65,7 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
 //        topic.setAnswers(topic.getAnswers() + 1);
 //        topicService.update(topic);
 
-        Relation relation = new Relation();
+        RelationDTO relation = new RelationDTO();
 
         relation.setSrcUser((long) 1);
         relation.setSrcType(Constants.USER);
@@ -74,7 +73,7 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
         relation.setTargetId(answer.getId());
         relation.setTargetType(Constants.ANSWER);
 
-        relationClient1.add(relation);
+        relationClient.add(relation);
         long milliss = System.currentTimeMillis();
 
         String str = (milliss - millis) + "";

@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @Date: Created in 16:54 2018/12/10.
  */
 @Data
-public class Relation implements Serializable {
+public class RelationDTO implements Serializable {
 
     private Long id;
 

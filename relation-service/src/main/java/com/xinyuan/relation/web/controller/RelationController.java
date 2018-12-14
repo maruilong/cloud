@@ -26,7 +26,7 @@ public class RelationController {
     @Autowired
     private RelationService relationService;
 
-    @ApiImplicitParam(name = "relation", value = "relation", required = true, dataType = "Relation")
+    @ApiImplicitParam(name = "relation", value = "relation", required = true, dataType = "RelationDTO")
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public ResponseEntity<Relation> add(@RequestBody Relation relation) {
 
