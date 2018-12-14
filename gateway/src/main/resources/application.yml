@@ -9,16 +9,6 @@ server:
   port: 1600
 #  context-path: /gateway
 zuul:
-  routes:
-    order-service:
-      path: /order/**
-      service-id: order-service
-    client1-server:
-      path: /client1/**
-      service-id: client1-server
-    client2-server:
-      path: /client2/**
-      service-id: client2-server
     relation-service:
       path: /relation/**
       service-id: relation-service
