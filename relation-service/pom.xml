@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>relationDTO-service</artifactId>
+    <artifactId>relation-service</artifactId>
 
     <dependencies>
         <dependency>
@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.xinyuan</groupId>
-            <artifactId>relationDTO-service-api</artifactId>
+            <artifactId>relation-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -55,6 +55,6 @@
     </dependencies>
 
     <build>
-        <finalName>relationDTO-service</finalName>
+        <finalName>relation-service</finalName>
     </build>
 </project>

@@ -77,7 +77,7 @@ public class AnswerService extends BaseService<AnswerRepository, Answer, Long> {
         long milliss = System.currentTimeMillis();
 
         String str = (milliss - millis) + "";
-        System.out.println("耗时:" + str + "毫秒");
+        System.out.println("耗时:" + str + "毫秒 ");
         return answer;
     }
 

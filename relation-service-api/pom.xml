@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>relationDTO-service-api</artifactId>
+    <artifactId>relation-service-api</artifactId>
 
     <build>
-        <finalName>relationDTO-service-api</finalName>
+        <finalName>relation-service-api</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>

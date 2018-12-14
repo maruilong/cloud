@@ -23,6 +23,6 @@ zuul:
   routes:
     producer:
       #响应的路径
-      path: /producer/**
+      path: /consumer/**
       #重定向到的服务（根据服务id名称从注册中心获取服务地址）
-      serviceId:  producer-service
+      serviceId:  consumer-service
