@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-
 /**
  * @author liang
  */
+
 public interface RelationClient {
 
     @RequestMapping(value = "/api/relation/add", method = RequestMethod.POST)

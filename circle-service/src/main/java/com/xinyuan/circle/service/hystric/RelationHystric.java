@@ -1,5 +1,6 @@
-package com.xinyuan.relation.client.hystric;
+package com.xinyuan.circle.service.hystric;
 
+import com.xinyuan.circle.service.RelationService;
 import com.xinyuan.relation.client.RelationClient;
 import com.xinyuan.relation.model.dto.RelationDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -14,10 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 @Slf4j
 @Component
-public class RelationHystric implements RelationClient {
+public class RelationHystric implements RelationService {
     @Override
     public ResponseEntity<RelationDTO> add(@RequestBody RelationDTO relationDTO) {
-
         log.error("relation 保存出错 " + relationDTO);
         return ResponseEntity.ok(relationDTO);
     }
