@@ -7,10 +7,16 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
-    username: root
-    password: shinian
-    driver-class-name: com.mysql.jdbc.Driver
+    mrl:
+      url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
+      username: root
+      password: shinian
+      driver-class-name: com.mysql.jdbc.Driver
+    test:
+      url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
+        username: root
+        password: shinian
+        driver-class-name: com.mysql.jdbc.Driver
   application:
     name: circle-service
   main:
