@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * @author hzx
@@ -61,6 +62,11 @@ public class PageUtil<T> implements Page<T> {
     @Override
     public long getTotalElements() {
         return size;
+    }
+
+    @Override
+    public <U> Page<U> map(Function<? super T, ? extends U> converter) {
+        return null;
     }
 
 
@@ -160,8 +166,4 @@ public class PageUtil<T> implements Page<T> {
         return null;
     }
 
-    @Override
-    public <S> Page<S> map(Converter<? super T, ? extends S> converter) {
-        return null;
-    }
 }

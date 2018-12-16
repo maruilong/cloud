@@ -1,9 +1,7 @@
 package com.xinyuan.relation.client;
 
 import com.xinyuan.relation.client.hystric.HelloHystric;
-import com.xinyuan.relation.client.hystric.RelationHystric;
-import com.xinyuan.relation.model.dto.RelationDTO;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

@@ -58,7 +58,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
 
         if (ReflectionUtils.hasField(jpaResult, fieldName)) {
 
-            result = bizRepository.findOne((ID) ReflectionUtils.getFieldValue(jpaResult, fieldName));
+            result = bizRepository.getOne((ID) ReflectionUtils.getFieldValue(jpaResult, fieldName));
         }
         return result;
     }
@@ -69,7 +69,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
      * @author 2018-03-06 14:01
      */
     public void remove(ID id) throws BaseException {
-        T entity = bizRepository.findOne(id);
+        T entity = bizRepository.getOne(id);
         if (entity != null) {
             if (ReflectionUtils.hasField(entity, "deleted")) {
                 ReflectionUtils.invokeSetter(entity, "deleted", 1);
@@ -89,7 +89,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
         T result = null;
         if (ReflectionUtils.hasField(entity, "id")) {
             ID id = (ID) ReflectionUtils.getFieldValue(entity, "id");
-            result = bizRepository.findOne(id);
+            result = bizRepository.getOne(id);
         }
         EntityUtils.copyPropertiesIgnoreNull(entity, result);
         bizRepository.saveAndFlush(result);
@@ -101,7 +101,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
      * @author 2018-03-06 14:59
      */
     public T get(ID id) throws BaseException {
-        return bizRepository.findOne(id);
+        return bizRepository.getOne(id);
     }
 
     /**

@@ -1,13 +1,9 @@
 package com.xinyuan.relation.web.controller;
 
-import com.xinyuan.base.common.util.ResultUtil;
-import com.xinyuan.base.common.web.Message;
-import com.xinyuan.base.common.web.PageBody;
 import com.xinyuan.relation.entity.Relation;
 import com.xinyuan.relation.service.RelationService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -5,7 +5,6 @@ import com.xinyuan.circle.entity.Answer;
 import com.xinyuan.circle.entity.Topic;
 import com.xinyuan.circle.mapper.TopicRepository;
 import com.xinyuan.base.service.BaseService;
-import com.xinyuan.relation.client.RelationClient;
 import com.xinyuan.relation.model.dto.RelationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,7 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
     private AnswerService answerService;
 
     @Autowired
-    private RelationClient relationClient;
+    private RelationService relationService;
 
     @Transactional
     public Topic saveTopic(Topic topic) {
@@ -42,7 +41,7 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         relationDTO.setTargetType(Constants.TOPIC);
         relationDTO.setDeleted(0);
 
-        relationClient.add(relationDTO);
+        relationService.add(relationDTO);
 
         return topic;
     }

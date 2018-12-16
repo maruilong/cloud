@@ -61,7 +61,7 @@ public class PageBean implements Pageable {
      * 第二页所需要增加的数量
      */
     @Override
-    public int getOffset() {
+    public long getOffset() {
         return (getPagenumber() - 1) * getPagesize();
     }
 

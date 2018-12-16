@@ -38,7 +38,7 @@ public class UserService extends BaseService<UserRepository, User, Long> {
      * @param id
      */
     public void delete(Long id) {
-        userRepository.delete(id);
+        userRepository.deleteById(id);
     }
 
     /**
