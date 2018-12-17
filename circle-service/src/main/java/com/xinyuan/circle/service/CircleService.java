@@ -1,7 +1,7 @@
 package com.xinyuan.circle.service;
 
-import com.xinyuan.circle.entity.Circle;
-import com.xinyuan.circle.mapper.CircleRepository;
+import com.xinyuan.circle.entity.mysql.Circle;
+import com.xinyuan.circle.mapper.mysql.CircleRepository;
 import com.xinyuan.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

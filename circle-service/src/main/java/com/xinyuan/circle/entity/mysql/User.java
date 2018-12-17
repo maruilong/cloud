@@ -1,4 +1,4 @@
-package com.xinyuan.circle.entity;
+package com.xinyuan.circle.entity.mysql;
 
 import lombok.Data;
 

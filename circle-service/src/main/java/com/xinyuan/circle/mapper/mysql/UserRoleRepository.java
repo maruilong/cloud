@@ -1,6 +1,6 @@
-package com.xinyuan.circle.mapper;
+package com.xinyuan.circle.mapper.mysql;
 
-import com.xinyuan.circle.entity.UserRole;
+import com.xinyuan.circle.entity.mysql.UserRole;
 import com.xinyuan.base.mapper.BaseJpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -2,8 +2,8 @@ package com.xinyuan.circle.service;
 
 import com.xinyuan.base.common.service.ParamCondition;
 import com.xinyuan.base.common.service.SelectParam;
-import com.xinyuan.circle.entity.User;
-import com.xinyuan.circle.mapper.UserRepository;
+import com.xinyuan.circle.entity.mysql.User;
+import com.xinyuan.circle.mapper.mysql.UserRepository;
 import com.xinyuan.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

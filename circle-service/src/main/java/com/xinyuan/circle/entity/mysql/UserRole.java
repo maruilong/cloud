@@ -1,4 +1,4 @@
-package com.xinyuan.circle.entity;
+package com.xinyuan.circle.entity.mysql;
 
 import lombok.Data;
 
@@ -12,15 +12,17 @@ import static javax.persistence.GenerationType.IDENTITY;
  */
 @Data
 @Entity
-@Table(name = "sys_role")
-public class Role implements Serializable {
-
+@Table(name = "sys_user_role")
+public class UserRole implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
-    @Column(name = "role_name",unique = true)
-    private String roleName;
+    @Column(name = "u_id")
+    private Long uid;
+
+    @Column(name = "r_id")
+    private Long rid;
 
     @Column(name = "deleted")
     private Integer deleted = 0;

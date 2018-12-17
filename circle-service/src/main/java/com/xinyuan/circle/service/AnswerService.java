@@ -1,10 +1,9 @@
 package com.xinyuan.circle.service;
 
 import com.xinyuan.base.common.web.Constants;
-import com.xinyuan.base.entity.Relation;
-import com.xinyuan.circle.entity.Answer;
-import com.xinyuan.circle.entity.Comment;
-import com.xinyuan.circle.mapper.AnswerRepository;
+import com.xinyuan.circle.entity.mysql.Answer;
+import com.xinyuan.circle.entity.mysql.Comment;
+import com.xinyuan.circle.mapper.mysql.AnswerRepository;
 import com.xinyuan.base.service.BaseService;
 import com.xinyuan.relation.client.RelationClient;
 import com.xinyuan.relation.model.dto.RelationDTO;

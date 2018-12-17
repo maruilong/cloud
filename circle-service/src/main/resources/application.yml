@@ -7,16 +7,16 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    mrl:
-      url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
+    mysql:
+      url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
       username: root
-      password: shinian
+      password: xinyaun
       driver-class-name: com.mysql.jdbc.Driver
-    test:
-      url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
-        username: root
-        password: shinian
-        driver-class-name: com.mysql.jdbc.Driver
+    pgsql:
+      url: jdbc:postgresql://192.168.1.15:5432/mrl?useSSL=false
+      username: postgres
+      password: postgres
+      driver-class-name: org.hibernate.dialect.PostgreSQL9Dialect
   application:
     name: circle-service
   main:
@@ -24,7 +24,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1340/eureka/  #注册中心地址
+      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
   instance:
     hostname: localhost
     instance-id: http://localhost:1601

@@ -3,7 +3,7 @@ package com.xinyuan.circle.web.controller;
 import com.xinyuan.base.common.util.ResultUtil;
 import com.xinyuan.base.common.web.Message;
 import com.xinyuan.base.common.web.PageBody;
-import com.xinyuan.circle.entity.Answer;
+import com.xinyuan.circle.entity.mysql.Answer;
 import com.xinyuan.circle.service.AnswerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
