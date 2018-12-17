@@ -35,8 +35,11 @@ public class DruidDBConfig {
     @Value("${spring.datasource.pgsql.url}")
     private String dbUrl2;
 
-    @Value("com.mysql.jdbc.Driver")
-    private String driverClassName;
+    @Value("${spring.datasource.mysql.driver-class-name}")
+    private String driverClassName1;
+
+    @Value("${spring.datasource.pgsql.driver-class-name}")
+    private String driverClassName2;
 
     @Value("5")
     private int initialSize;
@@ -47,7 +50,7 @@ public class DruidDBConfig {
     @Value("20")
     private int maxActive;
 
-    @Value("60000")
+    @Value("6000")
     private int maxWait;
 
     /**
@@ -95,17 +98,17 @@ public class DruidDBConfig {
     @Bean(name = "mysqlDataSource")
     @Qualifier("mysqlDataSource")
     public DataSource dataSource() {
-        return getDruidDataSource(username1, password1, dbUrl1);
+        return getDruidDataSource(username1, password1, dbUrl1, driverClassName1);
     }
 
     @Bean(name = "pgsqlDataSource")
     @Qualifier("pgsqlDataSource")
     @Primary
     public DataSource testDataSource() {
-        return getDruidDataSource(username2, password2, dbUrl2);
+        return getDruidDataSource(username2, password2, dbUrl2, driverClassName2);
     }
 
-    private DruidDataSource getDruidDataSource(String username, String password, String url) {
+    private DruidDataSource getDruidDataSource(String username, String password, String url,String driverClassName) {
         DruidDataSource datasource = new DruidDataSource();
 
         datasource.setUrl(url);

@@ -2,14 +2,14 @@ server:
   port: 1602
 spring:
   jpa:
-    generate-ddl: false
+    generate-ddl: true
     show-sql: true
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
     username: root
-    password: shinian
+    password: xinyuan
     driver-class-name: com.mysql.jdbc.Driver
 
   application:
@@ -20,7 +20,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1340/eureka/  #注册中心地址
+      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
   instance:
     hostname: localhost
     instance-id: http://localhost:1602

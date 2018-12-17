@@ -2,21 +2,29 @@ server:
   port: 1601
 spring:
   jpa:
-    generate-ddl: false
-    show-sql: true
+    properties:
+      hibernate:
+        mysql-dialect:
+          org.hibernate.dialect.MySQL5InnoDBDialect
+        pgsql-dialect:
+          org.hibernate.dialect.PostgreSQL94Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
     hibernate:
       ddl-auto: update
+    generate-ddl: true
+    show-sql: true
   datasource:
     mysql:
       url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
       username: root
-      password: xinyaun
-      driver-class-name: com.mysql.jdbc.Driver
+      password: xinyuan
+      driver-class-name: com.mysql.cj.jdbc.Driver
     pgsql:
       url: jdbc:postgresql://192.168.1.15:5432/mrl?useSSL=false
       username: postgres
       password: postgres
-      driver-class-name: org.hibernate.dialect.PostgreSQL9Dialect
+      driver-class-name: org.postgresql.Driver
   application:
     name: circle-service
   main:
