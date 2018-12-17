@@ -16,6 +16,7 @@
         <module>common-service</module>
         <module>relation-service</module>
         <module>relation-service-api</module>
+        <module>monitor</module>
     </modules>
 
     <parent>
@@ -69,6 +70,11 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
     </dependencies>
 

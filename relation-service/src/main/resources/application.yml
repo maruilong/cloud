@@ -1,6 +1,10 @@
 server:
   port: 1602
 spring:
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:1701
   jpa:
     generate-ddl: true
     show-sql: true
@@ -11,11 +15,11 @@ spring:
     username: root
     password: xinyuan
     driver-class-name: com.mysql.jdbc.Driver
-
   application:
     name: relation-service
   main:
     allow-bean-definition-overriding: true
+
 
 eureka:
   client:
@@ -25,4 +29,12 @@ eureka:
     hostname: localhost
     instance-id: http://localhost:1602
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 
