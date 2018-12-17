@@ -17,6 +17,7 @@
         <module>relation-service</module>
         <module>relation-service-api</module>
         <module>monitor</module>
+        <module>search-service</module>
     </modules>
 
     <parent>

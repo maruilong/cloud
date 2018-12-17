@@ -50,3 +50,10 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+#Elsearch配置
+elasticsearch:
+  ip: 192.168.1.10
+  cluster:
+    name: cloud
+  port: 9300
+  pool: 5

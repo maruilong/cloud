@@ -26,29 +26,9 @@
             <artifactId>spring-boot-admin-starter-server</artifactId>
             <version>2.1.1</version>
         </dependency>
-
-
-        <!--        <dependency>
-                    <groupId>de.codecentric</groupId>
-                    <artifactId>spring-boot-admin-server-ui-turbine</artifactId>
-                    <version>1.5.7</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-actuator</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-                </dependency>-->
     </dependencies>
 
+    <build>
+        <finalName>monitor</finalName>
+    </build>
 </project>
