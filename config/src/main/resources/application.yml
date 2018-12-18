@@ -24,7 +24,7 @@ management:
     web:
       exposure:
         include: bus-refresh
-
+# http://blog.sina.com.cn/s/blog_6d3c1ec60102xk3x.html
     # 关闭安全管理
 #management:
 #  security:
