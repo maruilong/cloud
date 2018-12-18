@@ -1,0 +1,19 @@
+server:
+  port: 1801
+spring:
+  application:
+    name: redis-service
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: localhost
+    database: 1
+    port: 6379
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+  instance:
+    hostname: localhost
+    instance-id: http://localhost:1801

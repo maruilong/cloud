@@ -9,10 +9,12 @@ import com.xinyuan.base.service.BaseService;
 import com.xinyuan.circle.mapper.pgsql.BookRepository;
 import com.xinyuan.relation.model.dto.RelationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -33,6 +35,9 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
     @Autowired
     private BookRepository bookRepository;
 
+    @Autowired
+    private RedisService redisService;
+
     @Transactional
     public Topic saveTopic(Topic topic) {
         topic = save(topic);
@@ -51,6 +56,9 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         Book book = new Book();
         book.setContent(topic.getTitle());
         bookRepository.save(book);
+
+        System.out.println(redisService.getAllKeys().toString());
+
         return topic;
     }
 
