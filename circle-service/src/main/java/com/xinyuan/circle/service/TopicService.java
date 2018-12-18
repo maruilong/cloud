@@ -1,5 +1,6 @@
 package com.xinyuan.circle.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.xinyuan.base.common.web.Constants;
 import com.xinyuan.circle.entity.mysql.Answer;
 import com.xinyuan.circle.entity.mysql.Topic;
@@ -7,14 +8,13 @@ import com.xinyuan.circle.entity.pgsql.Book;
 import com.xinyuan.circle.mapper.mysql.TopicRepository;
 import com.xinyuan.base.service.BaseService;
 import com.xinyuan.circle.mapper.pgsql.BookRepository;
+import com.xinyuan.elasticsearch.AddDataDTO;
 import com.xinyuan.relation.model.dto.RelationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Set;
 
 
 /**
@@ -38,6 +38,9 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
     @Autowired
     private RedisService redisService;
 
+    @Autowired
+    private ElasticSearchService elasticSearchService;
+
     @Transactional
     public Topic saveTopic(Topic topic) {
         topic = save(topic);
@@ -57,8 +60,17 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         book.setContent(topic.getTitle());
         bookRepository.save(book);
 
-        System.out.println(redisService.getAllKeys().toString());
+//        System.out.println(redisService.getAllKeys().toString());
 
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "shinian");
+
+        AddDataDTO addDataDTO = new AddDataDTO();
+        addDataDTO.setJsonObject(jsonObject);
+        addDataDTO.setIndex("cloud");
+        addDataDTO.setType("person");
+        String addData = elasticSearchService.addData(addDataDTO);
+        System.out.println(addData);
         return topic;
     }
 

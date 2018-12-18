@@ -23,7 +23,7 @@ public class RelationApi implements RelationClient {
     private RelationService relationService;
 
     @Override
-    @ApiOperation(httpMethod = "POST", value = "根据ID获取地址信息")
+    @ApiOperation(httpMethod = "POST", value = "添加关系")
     public ResponseEntity<RelationDTO> add(@RequestBody RelationDTO relationDTO) {
 
         Relation relation = new Relation();

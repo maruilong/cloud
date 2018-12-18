@@ -1,9 +1,7 @@
 package com.xinyuan.circle.service;
 
 import com.xinyuan.circle.service.hystric.RedisHystric;
-import com.xinyuan.circle.service.hystric.RelationHystric;
 import com.xinyuan.redis.client.RedisClient;
-import com.xinyuan.relation.client.RelationClient;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**
