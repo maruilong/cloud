@@ -11,7 +11,13 @@
 
     <artifactId>config</artifactId>
 
-
+    <dependencies>
+        <!--配置中心服务-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
