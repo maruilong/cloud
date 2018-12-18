@@ -1,23 +1,15 @@
 spring:
   application:
-    name: relation-service
-  profiles:
-    active: dev
+    name: relation-service                     #指定了配置文件的应用名
   cloud:
     config:
-      fail-fast: true
-      discovery:
-        service-id: relation-service
-        enabled: true
-      profile: ${spring.profiles.active}
-      label: ${spring.profiles.active}
+      uri: http://192.168.1.10:1350/        #Config server的uri
+      profile: dev                       #指定的环境
+      label: master                   #指定分支
   main:
     allow-bean-definition-overriding: true
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
-  instance:
-    hostname: localhost
-    instance-id: http://localhost:1602
+server:
+  port: 1602
+#management:
+#  security:
+#    enabled: false     #SpringBoot 1.5.X 以上默认开通了安全认证，如果不关闭会要求权限

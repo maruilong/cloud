@@ -11,15 +11,7 @@ spring:
       server:
         git:
           uri: http://192.168.1.7:8099/huwenzhe/springcloud-config.git
-          default-label: ${spring.profiles.active}   #解决监控down
-
-# 关闭安全管理
-#management:
-#  security:
-#    enabled: false
-#endpoints:
-#  health:
-#    sensitive: false
+          default-label: master   #解决监控down
 ---
 spring:
   profiles: dev
@@ -58,3 +50,11 @@ eureka:
 #  client:
 #    serviceUrl:
 #      defaultZone: http://pig:gip6666@eureka:1025/eureka
+
+# 关闭安全管理
+#management:
+#  security:
+#    enabled: false
+#endpoints:
+#  health:
+#    sensitive: false

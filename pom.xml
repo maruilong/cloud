@@ -104,12 +104,7 @@
             <version>2.6.1</version>
         </dependency>
 
-        <!--elasticsearch 6.2.3 transport-->
-        <dependency>
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>transport</artifactId>
-            <version>6.3.0</version>
-        </dependency>
+
 
         <!--配置中心服务-->
         <dependency>
