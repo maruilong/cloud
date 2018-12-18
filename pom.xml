@@ -19,6 +19,8 @@
         <module>redis-service</module>
         <module>service-api</module>
         <module>search-service</module>
+        <module>stream</module>
+        <module>config</module>
     </modules>
 
     <parent>
@@ -107,6 +109,12 @@
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>transport</artifactId>
             <version>6.3.0</version>
+        </dependency>
+
+        <!--配置中心服务-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
     </dependencies>
 

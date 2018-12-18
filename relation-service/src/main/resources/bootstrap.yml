@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: relation-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: relation-service
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: ${spring.profiles.active}
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+  instance:
+    hostname: localhost
+    instance-id: http://localhost:1602

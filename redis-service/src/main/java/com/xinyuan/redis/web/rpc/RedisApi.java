@@ -26,7 +26,7 @@ public class RedisApi implements RedisClient {
     private RedisService redisService;
 
     @Override
-    @ApiOperation(httpMethod = "POST", value = "根据ID获取地址信息")
+    @ApiOperation(httpMethod = "GET", value = "getAllKeys")
     public ResponseEntity<Set<String>> getAllKeys() {
         Set<String> allKeys = redisService.getAllKeys();
 
