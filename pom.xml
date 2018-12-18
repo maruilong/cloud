@@ -20,6 +20,8 @@
         <module>redis-service</module>
         <module>service-api</module>
         <module>search-service</module>
+        <module>stream</module>
+        <module>config</module>
     </modules>
 
     <parent>
@@ -78,6 +80,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+        <!--配置中心服务-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: relation-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: relation-service
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: ${spring.profiles.active}

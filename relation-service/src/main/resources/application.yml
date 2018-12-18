@@ -1,10 +1,6 @@
 server:
   port: 1602
 spring:
-#  boot:
-#    admin:
-#      client:
-#        url: http://localhost:1701
   jpa:
     generate-ddl: true
     show-sql: true
