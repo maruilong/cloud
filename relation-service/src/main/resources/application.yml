@@ -1,36 +1,36 @@
-server:
-  port: 1602
-spring:
-  jpa:
-    generate-ddl: true
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-  datasource:
-    url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
-    username: root
-    password: xinyuan
-    driver-class-name: com.mysql.jdbc.Driver
-  application:
-    name: relation-service
-  main:
-    allow-bean-definition-overriding: true
-
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
-  instance:
-    hostname: localhost
-    instance-id: http://localhost:1602
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
-
+#server:
+#  port: 1602
+#spring:
+#  jpa:
+#    generate-ddl: true
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#  datasource:
+#    url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
+#    username: root
+#    password: xinyuan
+#    driver-class-name: com.mysql.jdbc.Driver
+#  application:
+#    name: relation-service
+#  main:
+#    allow-bean-definition-overriding: true
+#
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+#  instance:
+#    hostname: localhost
+#    instance-id: http://localhost:1602
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
+#
