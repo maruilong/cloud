@@ -5,11 +5,16 @@ spring:
     config:
       profile: default
       label: master
-      uri: http://localhost:1350/
+      discovery:
+        enabled: true
+        service-id: config
 server:
   port: 1901
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+  instance:
+    hostname: localhost
+    instance-id: http://localhost:1901

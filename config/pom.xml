@@ -12,6 +12,11 @@
     <artifactId>config</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka</artifactId>
+        </dependency>
+
         <!--配置中心服务-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
