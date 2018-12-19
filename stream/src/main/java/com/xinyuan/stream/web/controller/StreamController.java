@@ -2,7 +2,7 @@ package com.xinyuan.stream.web.controller;
 
 import com.xinyuan.stream.client.StreamClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.integration.support.MessageBuilder;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

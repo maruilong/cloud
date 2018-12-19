@@ -16,6 +16,10 @@ spring:
 #        username: mrl
 #        password: shinian
 eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
       defaultZone: http://192.168.1.10:1340/eureka/ #注册中心地址
