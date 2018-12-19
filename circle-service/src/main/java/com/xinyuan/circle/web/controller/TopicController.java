@@ -83,5 +83,9 @@ public class TopicController {
         return ResponseEntity.ok(page);
     }
 
+    @RequestMapping("test")
+    public String test() {
+        return "test";
+    }
 
 }

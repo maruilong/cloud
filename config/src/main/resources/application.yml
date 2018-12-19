@@ -10,20 +10,15 @@ spring:
         git:
           uri: http://192.168.1.7:8099/huwenzhe/springcloud-config.git
           default-label: master #解决监控down
-  rabbitmq:
-        host: localhost
-        port: 5672
-        username: mrl
-        password: shinian
+#  rabbitmq:
+#        host: localhost
+#        port: 5672
+#        username: mrl
+#        password: shinian
 eureka:
   client:
     serviceUrl:
       defaultZone: http://192.168.1.10:1340/eureka/ #注册中心地址
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh
 # http://blog.sina.com.cn/s/blog_6d3c1ec60102xk3x.html
     # 关闭安全管理
 #management:

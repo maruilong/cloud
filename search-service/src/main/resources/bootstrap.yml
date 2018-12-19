@@ -6,11 +6,6 @@ spring:
       profile: default
       label: master
       uri: http://localhost:1350/
-  rabbitmq:
-      host: localhost
-      port: 5672
-      username: mrl
-      password: shinian
 server:
   port: 1901
 management:
