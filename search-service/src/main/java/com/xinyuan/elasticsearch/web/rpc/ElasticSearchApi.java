@@ -1,6 +1,5 @@
 package com.xinyuan.elasticsearch.web.rpc;
 
-import com.alibaba.fastjson.JSONObject;
 import com.xinyuan.elasticsearch.AddDataDTO;
 import com.xinyuan.elasticsearch.common.util.elasticsearch.ElasticsearchUtil;
 import com.xinyuan.elasticsearch.client.ElasticSearchClient;

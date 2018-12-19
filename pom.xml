@@ -111,6 +111,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <!--<version>6.0.6</version>-->
+            <version>8.0.11</version>
+        </dependency>
 
         <!--分布式事务-->
         <!--<dependency>-->

@@ -7,7 +7,7 @@ import com.xinyuan.circle.entity.mysql.Topic;
 import com.xinyuan.circle.entity.pgsql.Book;
 import com.xinyuan.circle.mapper.mysql.TopicRepository;
 import com.xinyuan.base.service.BaseService;
-import com.xinyuan.circle.mapper.pgsql.BookRepository;
+//import com.xinyuan.circle.mapper.pgsql.BookRepository;
 import com.xinyuan.elasticsearch.AddDataDTO;
 import com.xinyuan.relation.model.dto.RelationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +32,8 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
     @Autowired
     private RelationService relationService;
 
-    @Autowired
-    private BookRepository bookRepository;
+//    @Autowired
+//    private BookRepository bookRepository;
 
     @Autowired
     private RedisService redisService;
@@ -54,11 +54,11 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         relationDTO.setTargetType(Constants.TOPIC);
         relationDTO.setDeleted(0);
 
-        relationService.add(relationDTO);
+//        relationService.add(relationDTO);
 
         Book book = new Book();
         book.setContent(topic.getTitle());
-        bookRepository.save(book);
+//        bookRepository.save(book);
 
 //        System.out.println(redisService.getAllKeys().toString());
 

@@ -6,31 +6,31 @@ spring:
       hibernate:
         mysql-dialect:
           org.hibernate.dialect.MySQL5InnoDBDialect
-        pgsql-dialect:
-          org.hibernate.dialect.PostgreSQL94Dialect
-        temp:
-          use_jdbc_metadata_defaults: false
+#        pgsql-dialect:
+#          org.hibernate.dialect.PostgreSQL94Dialect
+#        temp:
+#          use_jdbc_metadata_defaults: false
     hibernate:
       ddl-auto: update
     generate-ddl: false
     show-sql: true
   datasource:
     mysql:
-      url: jdbc:mysql://192.168.1.10:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
+      url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSl=false&serverTimezone=GMT%2B8
       username: root
-      password: xinyuan
+      password: shinian
       driver-class-name: com.mysql.cj.jdbc.Driver
-    pgsql:
-      url: jdbc:postgresql://192.168.1.15:5432/mrl?useSSL=false
-      username: postgres
-      password: postgres
-      driver-class-name: org.postgresql.Driver
+#    pgsql:
+#      url: jdbc:postgresql://192.168.1.15:5432/mrl?useSSL=false
+#      username: postgres
+#      password: postgres
+#      driver-class-name: org.postgresql.Driver
   application:
     name: circle-service
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+      defaultZone: http://localhost:1340/eureka/  #注册中心地址
   instance:
     hostname: localhost
     instance-id: http://localhost:1601
@@ -48,10 +48,3 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-#Elsearch配置
-elasticsearch:
-  ip: 192.168.1.10
-  cluster:
-    name: cloud
-  port: 9300
-  pool: 5

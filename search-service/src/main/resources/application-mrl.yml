@@ -8,7 +8,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+      defaultZone: http://localhost:1340/eureka/  #注册中心地址
   instance:
     hostname: localhost
     instance-id: http://localhost:1901
@@ -21,8 +21,8 @@ management:
     health:
       show-details: ALWAYS
 elasticsearch:
-  ip: 192.168.1.10
+  ip: 111.230.28.218
   cluster:
-    name: yjgl
+    name: cloud
   port: 9300
   pool: 5

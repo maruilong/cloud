@@ -1,20 +1,20 @@
-spring:
-  application:
-    name: search-service
-  cloud:
-    config:
-      profile: default
-      label: master
-      discovery:
-        enabled: true
-        service-id: config
-server:
-  port: 1901
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
-  instance:
-    hostname: localhost
-    instance-id: http://localhost:1901
+#spring:
+#  application:
+#    name: search-service
+#  cloud:
+#    config:
+#      profile: default
+#      label: master
+#      discovery:
+#        enabled: true
+#        service-id: config
+#server:
+#  port: 1901
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+#  instance:
+#    hostname: localhost
+#    instance-id: http://localhost:1901
