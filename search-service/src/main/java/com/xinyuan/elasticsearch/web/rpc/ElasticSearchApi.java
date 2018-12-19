@@ -15,6 +15,7 @@ public class ElasticSearchApi implements ElasticSearchClient {
 
     @Override
     public String addData(AddDataDTO addDataDTO) {
+        System.out.println(addDataDTO);
         return ElasticsearchUtil.addData(addDataDTO.getJsonObject(), addDataDTO.getIndex(), addDataDTO.getType());
     }
 }

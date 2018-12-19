@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class ElasticSearchHystric implements ElasticSearchService {
     @Override
     public String addData(AddDataDTO addDataDTO) {
+        System.out.println(addDataDTO);
         System.out.println("-0------失败");
         return null;
     }
