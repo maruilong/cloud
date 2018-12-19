@@ -60,12 +60,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.0.2.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>1.4.6.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
@@ -108,7 +102,6 @@
             <version>2.6.1</version>
         </dependency>
 
-
         <!--配置中心服务-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -121,27 +114,27 @@
 
         <!--分布式事务-->
         <!--<dependency>-->
-            <!--<groupId>com.codingapi</groupId>-->
-            <!--<artifactId>transaction-springcloud</artifactId>-->
-            <!--<version>${lcn.last.version}</version>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.slf4j</groupId>-->
-                    <!--<artifactId>*</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
+        <!--<groupId>com.codingapi</groupId>-->
+        <!--<artifactId>transaction-springcloud</artifactId>-->
+        <!--<version>${lcn.last.version}</version>-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>*</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>com.codingapi</groupId>-->
-            <!--<artifactId>tx-plugins-db</artifactId>-->
-            <!--<version>${lcn.last.version}</version>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.slf4j</groupId>-->
-                    <!--<artifactId>*</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
+        <!--<groupId>com.codingapi</groupId>-->
+        <!--<artifactId>tx-plugins-db</artifactId>-->
+        <!--<version>${lcn.last.version}</version>-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>*</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
         <!--</dependency>-->
     </dependencies>
 
