@@ -14,5 +14,5 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     registry-fetch-interval-seconds: 10
   server:
-    enable-self-preservation: false
+    enable-self-preservation: false #关闭安全模式,生产环境不建议
 #---------------------------------------------
