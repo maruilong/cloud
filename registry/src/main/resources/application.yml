@@ -1,5 +1,7 @@
+#---------------------------------------------
 server:
-  port: 1340 # 注册中心占用1340端口
+  port: 1300
+#---------------------------------------------
 eureka:
   instance:
     hostname: localhost
@@ -9,5 +11,6 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #其实就是 http://localhost:1340/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     registry-fetch-interval-seconds: 10
+#---------------------------------------------
