@@ -6,6 +6,7 @@ import com.xinyuan.elasticsearch.client.ElasticSearchClient;
 import io.swagger.annotations.Api;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RefreshScope
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ElasticSearchApi implements ElasticSearchClient {
 
     @Override
-    public String addData(AddDataDTO addDataDTO) {
+    public String addData(@RequestBody AddDataDTO addDataDTO) {
         System.out.println(addDataDTO);
         return ElasticsearchUtil.addData(addDataDTO.getJsonObject(), addDataDTO.getIndex(), addDataDTO.getType());
     }

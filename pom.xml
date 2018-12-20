@@ -21,10 +21,11 @@
         <module>search-service</module>
         <module>stream</module>
         <module>config</module>
+        <module>tx-manager</module>
     </modules>
 
     <properties>
-        <lcn.last.version>4.1.0</lcn.last.version>
+        <lcn.last.version>4.2.1-SNAPSHOT</lcn.last.version>
     </properties>
 
     <parent>
@@ -118,30 +119,7 @@
             <version>8.0.11</version>
         </dependency>
 
-        <!--分布式事务-->
-        <!--<dependency>-->
-        <!--<groupId>com.codingapi</groupId>-->
-        <!--<artifactId>transaction-springcloud</artifactId>-->
-        <!--<version>${lcn.last.version}</version>-->
-        <!--<exclusions>-->
-        <!--<exclusion>-->
-        <!--<groupId>org.slf4j</groupId>-->
-        <!--<artifactId>*</artifactId>-->
-        <!--</exclusion>-->
-        <!--</exclusions>-->
-        <!--</dependency>-->
 
-        <!--<dependency>-->
-        <!--<groupId>com.codingapi</groupId>-->
-        <!--<artifactId>tx-plugins-db</artifactId>-->
-        <!--<version>${lcn.last.version}</version>-->
-        <!--<exclusions>-->
-        <!--<exclusion>-->
-        <!--<groupId>org.slf4j</groupId>-->
-        <!--<artifactId>*</artifactId>-->
-        <!--</exclusion>-->
-        <!--</exclusions>-->
-        <!--</dependency>-->
     </dependencies>
 
     <build>

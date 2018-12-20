@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: redis-service
-  main:
-    allow-bean-definition-overriding: true
   redis:
     host: localhost
     database: 1

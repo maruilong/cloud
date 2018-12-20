@@ -101,12 +101,12 @@ public class DruidDBConfig {
         return getDruidDataSource(username1, password1, dbUrl1, driverClassName1);
     }
 
-//    @Bean(name = "pgsqlDataSource")
-//    @Qualifier("pgsqlDataSource")
-//    @Primary
-//    public DataSource testDataSource() {
-//        return getDruidDataSource(username2, password2, dbUrl2, driverClassName2);
-//    }
+    @Bean(name = "pgsqlDataSource")
+    @Qualifier("pgsqlDataSource")
+    @Primary
+    public DataSource testDataSource() {
+        return getDruidDataSource(username2, password2, dbUrl2, driverClassName2);
+    }
 
     private DruidDataSource getDruidDataSource(String username, String password, String url,String driverClassName) {
         DruidDataSource datasource = new DruidDataSource();

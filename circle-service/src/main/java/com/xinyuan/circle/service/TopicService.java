@@ -1,6 +1,7 @@
 package com.xinyuan.circle.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.codingapi.tx.annotation.TxTransaction;
 import com.xinyuan.base.common.web.Constants;
 import com.xinyuan.circle.entity.mysql.Answer;
 import com.xinyuan.circle.entity.mysql.Topic;
@@ -8,6 +9,7 @@ import com.xinyuan.circle.entity.pgsql.Book;
 import com.xinyuan.circle.mapper.mysql.TopicRepository;
 import com.xinyuan.base.service.BaseService;
 //import com.xinyuan.circle.mapper.pgsql.BookRepository;
+import com.xinyuan.circle.mapper.pgsql.BookRepository;
 import com.xinyuan.elasticsearch.AddDataDTO;
 import com.xinyuan.relation.model.dto.RelationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +34,8 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
     @Autowired
     private RelationService relationService;
 
-//    @Autowired
-//    private BookRepository bookRepository;
+    @Autowired
+    private BookRepository bookRepository;
 
     @Autowired
     private RedisService redisService;
@@ -42,6 +44,7 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
     private ElasticSearchService elasticSearchService;
 
     @Transactional
+    @TxTransaction(isStart = true)
     public Topic saveTopic(Topic topic) {
         topic = save(topic);
 
@@ -54,11 +57,11 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         relationDTO.setTargetType(Constants.TOPIC);
         relationDTO.setDeleted(0);
 
-//        relationService.add(relationDTO);
+        relationService.add(relationDTO);
 
         Book book = new Book();
         book.setContent(topic.getTitle());
-//        bookRepository.save(book);
+        bookRepository.save(book);
 
 //        System.out.println(redisService.getAllKeys().toString());
 

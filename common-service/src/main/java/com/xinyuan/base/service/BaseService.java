@@ -1,6 +1,5 @@
 package com.xinyuan.base.service;
 
-import com.thoughtworks.xstream.core.BaseException;
 import com.xinyuan.base.common.service.Order;
 import com.xinyuan.base.common.service.PageBean;
 import com.xinyuan.base.common.service.ParamCondition;
@@ -47,7 +46,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
      * @author 2018-03-06 14:00
      */
     @Transactional(rollbackFor = Exception.class)
-    public T save(T entity) throws BaseException {
+    public T save(T entity) {
         String fieldName = "id";
 
         T jpaResult = bizRepository.saveAndFlush(entity);
@@ -68,7 +67,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
      *
      * @author 2018-03-06 14:01
      */
-    public void remove(ID id) throws BaseException {
+    public void remove(ID id) {
         T entity = bizRepository.getOne(id);
         if (entity != null) {
             if (ReflectionUtils.hasField(entity, "deleted")) {
@@ -85,7 +84,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
      * @author 2018-03-06 14:59
      */
     @Transactional(rollbackFor = Exception.class)
-    public void update(T entity) throws BaseException {
+    public void update(T entity) {
         T result = null;
         if (ReflectionUtils.hasField(entity, "id")) {
             ID id = (ID) ReflectionUtils.getFieldValue(entity, "id");
@@ -100,7 +99,7 @@ public abstract class BaseService<J extends BaseJpaRepository<T, ID>, T, ID exte
      *
      * @author 2018-03-06 14:59
      */
-    public T get(ID id) throws BaseException {
+    public T get(ID id) {
         return bizRepository.getOne(id);
     }
 
