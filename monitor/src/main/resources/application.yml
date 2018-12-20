@@ -1,17 +1,19 @@
+#---------------------------------------------
 server:
-  port: 1701
+  port: 1320
+#---------------------------------------------
 spring:
   application:
     name: monitor
-
+#---------------------------------------------
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+      defaultZone: http://192.168.1.10:1300/eureka/
   instance:
     hostname: localhost
-    instance-id: http://localhost:1701
-
+    instance-id: http://${eureka.instance.hostname}:${server.port}
+#---------------------------------------------
 management:
   endpoints:
     web:
