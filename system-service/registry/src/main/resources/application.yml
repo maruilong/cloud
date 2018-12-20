@@ -5,12 +5,14 @@ server:
 eureka:
   instance:
     hostname: localhost
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 20
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 10
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     registry-fetch-interval-seconds: 10
+  server:
+    enable-self-preservation: false
 #---------------------------------------------

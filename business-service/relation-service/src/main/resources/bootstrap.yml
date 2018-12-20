@@ -39,7 +39,12 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
+      defaultZone: http://192.168.1.10:1300/eurek/
+    healthcheck:
+      enabled: true
   instance:
-    hostname: localhost
-    instance-id: http://localhost:1602
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 10
+
+
