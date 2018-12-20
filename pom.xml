@@ -11,15 +11,14 @@
 
     <modules>
         <module>auth-server</module>
-
-        <module>circle-service</module>
         <module>common-service</module>
-        <module>relation-service</module>
+
         <module>redis-service</module>
         <module>service-api</module>
         <module>search-service</module>
         <module>stream</module>
         <module>system-service</module>
+        <module>business-service</module>
     </modules>
 
     <properties>
