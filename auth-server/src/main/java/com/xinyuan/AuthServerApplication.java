@@ -22,6 +22,7 @@ public class AuthServerApplication {
 
     /**
      * 为测试环境添加相关的 Request Dumper information，便于调试
+     *
      * @return
      */
     @Profile("!cloud")

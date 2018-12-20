@@ -11,7 +11,7 @@
 
     <modules>
         <module>auth-server</module>
-        <module>gateway</module>
+
         <module>circle-service</module>
         <module>common-service</module>
         <module>relation-service</module>
@@ -19,7 +19,6 @@
         <module>service-api</module>
         <module>search-service</module>
         <module>stream</module>
-
         <module>system-service</module>
     </modules>
 
@@ -51,6 +50,10 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+        </dependency>
         <!--spring boot开发工具-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

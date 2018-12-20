@@ -19,6 +19,7 @@
         <module>monitor</module>
         <module>tx-manager</module>
         <module>config</module>
+        <module>gateway</module>
     </modules>
 
 </project>

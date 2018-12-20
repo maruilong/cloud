@@ -1,6 +1,5 @@
 package com.xinyuan.service;
 
-import com.thoughtworks.xstream.core.BaseException;
 import com.xinyuan.common.service.Order;
 import com.xinyuan.common.service.PageBean;
 import com.xinyuan.common.service.ParamCondition;

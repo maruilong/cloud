@@ -2,7 +2,6 @@ package com.xinyuan.relation.service;
 
 import com.codingapi.tx.annotation.ITxTransaction;
 import com.codingapi.tx.annotation.TxTransaction;
-import com.thoughtworks.xstream.core.BaseException;
 import com.xinyuan.base.service.BaseService;
 import com.xinyuan.relation.entity.Relation;
 import com.xinyuan.relation.mapper.RelationRepository;
