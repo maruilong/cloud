@@ -1,5 +1,5 @@
 server:
-  port: 1601
+  port: 1500
 spring:
   jpa:
     properties:

@@ -1,5 +1,5 @@
 server:
-  port: 1602
+  port: 1510
 spring:
   application:
     name: relation-service
