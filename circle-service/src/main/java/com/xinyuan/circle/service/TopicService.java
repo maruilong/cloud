@@ -58,6 +58,7 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         relationDTO.setDeleted(0);
 
         relationService.add(relationDTO);
+        int i = 1 / 0;
 
         Book book = new Book();
         book.setContent(topic.getTitle());

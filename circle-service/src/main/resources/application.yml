@@ -38,7 +38,7 @@ eureka:
 #2.0版本默认不开启了
 feign:
   hystrix:
-    enabled: true
+    enabled: false
 
 management:
   endpoints:

@@ -25,7 +25,7 @@ public class RelationService extends BaseService<RelationRepository, Relation, L
     @TxTransaction
     @Override
     public Relation save(Relation entity) {
-        int i = 100 / 0;
+
         return super.save(entity);
     }
 
