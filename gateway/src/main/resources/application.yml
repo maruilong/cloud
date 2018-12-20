@@ -1,22 +1,29 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.1.10:1340/eureka/  #注册中心地址
-  instance:
-    prefer-ip-address: true
+#---------------------------------------------
+server:
+  port: 1330
+#---------------------------------------------
 spring:
   application:
     name: gateway
-  main:
-    allow-bean-definition-overriding: true
-
-server:
-  port: 1600
+#---------------------------------------------
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.10:1300/eureka/
+  instance:
+    prefer-ip-address: true
+#---------------------------------------------
 zuul:
   routes:
+    #圈子服务
     circle:
       path: /circle/**
       serviceId: circle-service
+    #关系服务
+    relation:
+      path: /relation/**
+      serviceId: relation-service
   host:
-    max-total-connections: 200 #默认值
-    max-per-route-connections: 20 #默认值
+    max-total-connections: 200
+    max-per-route-connections: 20
+#---------------------------------------------
