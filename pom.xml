@@ -10,19 +10,17 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>registry</module>
         <module>auth-server</module>
         <module>gateway</module>
         <module>circle-service</module>
         <module>common-service</module>
         <module>relation-service</module>
-        <module>monitor</module>
         <module>redis-service</module>
         <module>service-api</module>
         <module>search-service</module>
         <module>stream</module>
-        <module>config</module>
-        <module>tx-manager</module>
+
+        <module>system-service</module>
     </modules>
 
     <properties>
