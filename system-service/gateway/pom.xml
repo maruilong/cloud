@@ -11,6 +11,10 @@
     <artifactId>gateway</artifactId>
     <description>微服务网关</description>
 
+    <properties>
+        <swagger-butler-core.version>1.1.0</swagger-butler-core.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -19,6 +23,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.didispace</groupId>
+            <artifactId>swagger-butler-core</artifactId>
+            <version>${swagger-butler-core.version}</version>
         </dependency>
     </dependencies>
 

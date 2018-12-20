@@ -27,3 +27,13 @@ zuul:
     max-total-connections: 200
     max-per-route-connections: 20
 #---------------------------------------------
+swagger:
+  butler:
+    auto-generate-from-zuul-routes: true
+    generate-routes: circle, relation
+    resources:
+      circle:
+        api-docs-path: v2/api-docs
+      relation:
+        api-docs-path: v2/api-docs
+#---------------------------------------------
