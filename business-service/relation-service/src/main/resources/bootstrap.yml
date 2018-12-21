@@ -1,18 +1,15 @@
+#---------------------------------------------
 server:
   port: 1510
+#---------------------------------------------
 spring:
   application:
     name: relation-service
   cloud:
     config:
-#      fail-fast: true
-      #      discovery:
-      #        service-id: config
-      #        enabled: true
       uri: http://localhost:1360/
       profile: default
       label: master
-
   jpa:
     generate-ddl: true
     show-sql: true
@@ -23,19 +20,7 @@ spring:
     username: root
     password: xinyuan
     driver-class-name: com.mysql.jdbc.Driver
-
-  main:
-    allow-bean-definition-overriding: true
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
-
+#---------------------------------------------
 eureka:
   client:
     serviceUrl:
@@ -46,5 +31,14 @@ eureka:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 10
-
+#---------------------------------------------
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+#---------------------------------------------
 

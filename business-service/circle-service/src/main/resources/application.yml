@@ -1,5 +1,7 @@
+#---------------------------------------------
 server:
   port: 1500
+#---------------------------------------------
 spring:
   jpa:
     properties:
@@ -27,6 +29,7 @@ spring:
       driver-class-name: org.postgresql.Driver
   application:
     name: circle-service
+#---------------------------------------------
 eureka:
   client:
     serviceUrl:
@@ -34,12 +37,13 @@ eureka:
   instance:
     hostname: localhost
     instance-id: http://localhost:1601
+#---------------------------------------------
 #解决com.netflix.client.ClientException: Load balancer does not have available server for client：xxx
 #2.0版本默认不开启了
 feign:
   hystrix:
     enabled: false
-
+#---------------------------------------------
 management:
   endpoints:
     web:
@@ -48,11 +52,12 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+#---------------------------------------------
 #Elsearch配置
 elasticsearch:
   ip: 192.168.1.10
   cluster:
-    name: cloud
+    name: yjgl
   port: 9300
   pool: 5
-#######################################LCN-start#################################################
+#---------------------------------------------
