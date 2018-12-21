@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>auth-server</module>
         <module>common-service</module>
 
         <module>redis-service</module>
