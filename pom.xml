@@ -11,13 +11,10 @@
 
     <modules>
         <module>common-service</module>
-
-        <module>redis-service</module>
-        <module>service-api</module>
-        <module>search-service</module>
-        <module>stream</module>
+        <module>interface-service</module>
         <module>system-service</module>
         <module>business-service</module>
+        <module>resource-service</module>
     </modules>
 
     <properties>

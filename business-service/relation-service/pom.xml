@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.xinyuan</groupId>
-            <artifactId>service-api</artifactId>
+            <artifactId>interface-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

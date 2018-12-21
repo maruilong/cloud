@@ -1,0 +1,28 @@
+#---------------------------------------------
+server:
+  port: 1410
+#---------------------------------------------
+spring:
+  application:
+    name: redis-service
+  redis:
+    host: localhost
+    database: 1
+    port: 6379
+  cloud:
+    config:
+      uri: http://localhost:1360/
+      profile: default
+      label: master
+#---------------------------------------------
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1300/eureka/  #注册中心地址
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 10
+info:
+  profile: default
+#---------------------------------------------
