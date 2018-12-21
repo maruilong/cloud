@@ -1,5 +1,6 @@
 package com.xinyuan.mapper;
 
+import com.xinyuan.base.mapper.BaseJpaRepository;
 import com.xinyuan.entity.UserRole;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

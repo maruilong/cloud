@@ -1,7 +1,8 @@
 package com.xinyuan.service;
 
-import com.xinyuan.common.service.ParamCondition;
-import com.xinyuan.common.service.SelectParam;
+import com.xinyuan.base.common.service.ParamCondition;
+import com.xinyuan.base.common.service.SelectParam;
+import com.xinyuan.base.service.BaseService;
 import com.xinyuan.entity.User;
 import com.xinyuan.mapper.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

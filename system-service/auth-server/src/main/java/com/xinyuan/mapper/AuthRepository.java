@@ -1,5 +1,6 @@
 package com.xinyuan.mapper;
 
+import com.xinyuan.base.mapper.BaseJpaRepository;
 import com.xinyuan.entity.Auth;
 import org.springframework.stereotype.Repository;
 

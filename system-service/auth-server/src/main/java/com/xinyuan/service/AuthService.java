@@ -1,5 +1,6 @@
 package com.xinyuan.service;
 
+import com.xinyuan.base.service.BaseService;
 import com.xinyuan.entity.Auth;
 import com.xinyuan.mapper.AuthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
