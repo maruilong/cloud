@@ -58,7 +58,6 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         relationDTO.setDeleted(0);
 
         relationService.add(relationDTO);
-        int i = 1 / 0;
 
         Book book = new Book();
         book.setContent(topic.getTitle());
@@ -73,8 +72,8 @@ public class TopicService extends BaseService<TopicRepository, Topic, Long> {
         addDataDTO.setJsonObject(jsonObject);
         addDataDTO.setIndex("cloud");
         addDataDTO.setType("person");
-        String addData = elasticSearchService.addData(addDataDTO);
-        System.out.println(addData);
+//        String addData = elasticSearchService.addData(addDataDTO);
+//        System.out.println(addData);
         return topic;
     }
 

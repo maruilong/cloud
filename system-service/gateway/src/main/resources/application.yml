@@ -28,6 +28,8 @@ zuul:
   host:
     max-total-connections: 200
     max-per-route-connections: 20
+    connect-timeout-millis: 5000
+#---------------------------------------------
 #---------------------------------------------
 swagger:
   butler:
