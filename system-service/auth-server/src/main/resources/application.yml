@@ -35,6 +35,10 @@ spring:
     prefer-file-system-access: true
     suffix: .ftl
     template-loader-path: classpath:/
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
 #---------------------------------------------
 eureka:
   client:
@@ -45,3 +49,14 @@ eureka:
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 10
 #---------------------------------------------
+auth-server: http://localhost:1343/uaa
+security:
+  oauth2:
+    client:
+      clientId: xinyuan
+      clientSecret: xinyuan1525
+      user-authorization-uri: ${auth-server}/oauth/authorize
+      access-token-uri: ${auth-server}/oauth/token
+    resource:
+      jwt:
+        key-uri: ${auth-server}/oauth/token_key

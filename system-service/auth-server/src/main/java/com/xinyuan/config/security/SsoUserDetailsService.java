@@ -1,19 +1,13 @@
 package com.xinyuan.config.security;
 
-import com.xinyuan.entity.User;
 import com.xinyuan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
 
 /**
  * Created on 2017/12/26.

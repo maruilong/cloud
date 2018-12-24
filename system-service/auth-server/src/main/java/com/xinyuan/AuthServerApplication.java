@@ -6,12 +6,14 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 
 /**
  * 权限的校验端口
  *
  * @author liang
  */
+@EnableAuthorizationServer
 @EnableEurekaClient
 @SpringCloudApplication
 public class AuthServerApplication {
