@@ -29,6 +29,10 @@
             <artifactId>swagger-butler-core</artifactId>
             <version>${swagger-butler-core.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
