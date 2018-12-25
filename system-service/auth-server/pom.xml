@@ -12,6 +12,10 @@
     <artifactId>auth-server</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+        </dependency>
         <!--权限-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

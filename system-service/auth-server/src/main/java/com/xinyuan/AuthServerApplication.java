@@ -1,11 +1,8 @@
 package com.xinyuan;
 
-import org.apache.catalina.filters.RequestDumperFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Profile;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 
 /**
@@ -13,9 +10,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
  *
  * @author liang
  */
-@EnableAuthorizationServer
 @EnableEurekaClient
 @SpringCloudApplication
+@EnableAuthorizationServer
 public class AuthServerApplication {
 
     public static void main(String[] args) {
@@ -27,10 +24,10 @@ public class AuthServerApplication {
      *
      * @return
      */
-    @Profile("!cloud")
-    @Bean
-    RequestDumperFilter requestDumperFilter() {
-        return new RequestDumperFilter();
-    }
+//    @Profile("!cloud")
+//    @Bean
+//    RequestDumperFilter requestDumperFilter() {
+//        return new RequestDumperFilter();
+//    }
 
 }
