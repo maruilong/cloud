@@ -21,5 +21,6 @@
         <module>config</module>
         <module>gateway</module>
         <module>auth-server</module>
+        <module>oauth-server</module>
     </modules>
 </project>

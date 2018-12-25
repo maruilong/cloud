@@ -1,15 +1,10 @@
 #---------------------------------------------
 server:
-  port: 1510
+  port: 1343
 #---------------------------------------------
 spring:
   application:
-    name: relation-service
-  cloud:
-    config:
-      uri: http://localhost:1310/
-      profile: default
-      label: master
+    name: oauth-service
   jpa:
     generate-ddl: true
     show-sql: true
@@ -46,8 +41,4 @@ management:
     health:
       show-details: ALWAYS
 #---------------------------------------------
-security:
-  oauth2:
-    resource:
-      id: ${spring.application.name}
-      user-info-uri: http://localhost:1343/user
+

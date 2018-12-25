@@ -7,6 +7,8 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @Slf4j
 @RestController
 @RefreshScope
@@ -28,6 +30,11 @@ public class TestController implements TestClient {
     public String showPort() {
         log.info("我的端口是:" + port);
         return "我的端口是:" + port;
+    }
+
+    @RequestMapping("user")
+    public Principal user(Principal principal) {
+        return principal;
     }
 
 }

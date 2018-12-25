@@ -1,12 +1,12 @@
 package com.xinyuan.relation;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
@@ -15,10 +15,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableHystrix
 @EnableFeignClients
 @EnableSwagger2
-@SpringBootApplication
+@SpringCloudApplication
 @EnableEurekaClient
-@EnableDiscoveryClient
 @ComponentScan(basePackages = {"com.xinyuan"})
+@EnableOAuth2Client
 public class RelationApplication {
 
     public static void main(String[] args) {

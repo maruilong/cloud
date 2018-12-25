@@ -29,6 +29,7 @@ zuul:
     max-total-connections: 200
     max-per-route-connections: 20
     connect-timeout-millis: 5000
+  sensitive-headers: null
 #---------------------------------------------
 #---------------------------------------------
 swagger:
@@ -41,3 +42,8 @@ swagger:
       relation:
         api-docs-path: v2/api-docs
 #---------------------------------------------
+security:
+  oauth2:
+    resource:
+      id: ${spring.application.name}
+      user-info-uri: http://localhost:1343/user
