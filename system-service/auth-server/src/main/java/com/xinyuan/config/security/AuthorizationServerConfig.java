@@ -13,7 +13,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
@@ -44,7 +43,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Bean
     public TokenStore tokenStore() {
-        RedisTokenStore redis = new RedisTokenStore(connectionFactory);
+        CloudTokenStore redis = new CloudTokenStore(connectionFactory);
         return redis;
     }
 
@@ -71,7 +70,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 //        clients.withClientDetails(clientDetailsService);
-        clients.inMemory().withClient("xinyuan").scopes("xinyuan1525")
+        clients.inMemory().withClient("xinyuan").secret("e928cc15b2a13e05edc141912e872713").scopes("xinyuan1525")
                 .authorizedGrantTypes("authorization_code", "refresh_token","password")
                 .scopes("all", "read", "write")
                 .autoApprove(true);
