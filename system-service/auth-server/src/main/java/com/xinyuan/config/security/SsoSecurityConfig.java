@@ -22,7 +22,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    //此处必须声明这个bean类，否则无法注入AuthenticationManager
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -39,12 +38,8 @@ public class SsoSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/oauth/token").permitAll()
-                .antMatchers("/login").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .logout().permitAll()
-                .and()
-                .anonymous().and()
-                .csrf().disable();
+                .anyRequest().authenticated();
+
+        http.csrf().disable();
     }
 }

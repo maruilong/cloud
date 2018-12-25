@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -15,7 +14,6 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 /**
  * Created on 2017/12/26.
@@ -29,14 +27,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Autowired
     PasswordEncoder passwordEncoder;
-    @Autowired
-    AuthenticationManager authenticationManager;
 
     @Autowired
-    UserDetailsService userDetailsService;
-//
-//    @Autowired
-//    ClientDetailsService clientDetailsService;
+    AuthenticationManager authenticationManager;
 
     @Autowired
     private RedisConnectionFactory connectionFactory;
@@ -51,29 +44,27 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     DefaultTokenServices tokenServices() {
         DefaultTokenServices d = new DefaultTokenServices();
-//        d.setClientDetailsService(clientDetailsService);//如果没有设置此项，则client设置的token有效期无效
         d.setTokenStore(tokenStore());
-        d.setReuseRefreshToken(true);//是否重复使用refresh_token
-        d.setSupportRefreshToken(true);//是否支持refresh_token,为false则refresh_token无法使用
+        d.setReuseRefreshToken(true);
+        d.setSupportRefreshToken(true);
         return d;
     }
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("permitAll()")//对于CheckEndpoint控制器[框架自带的校验]的/oauth/token端点允许所有客户端发送器请求而不会被Spring-security拦截
-                .checkTokenAccess("isAuthenticated()")//要访问/oauth/check_token必须设置为permitAll(),此接口一般不对外公布，是springoauth2内部使用，因此这里要设为isAuthenticated()
-                .allowFormAuthenticationForClients()//允许客户表单认证,不加的话/oauth/token无法访问
-                .passwordEncoder(passwordEncoder);//设置oauth_client_details中的密码编码器
-
+        security.passwordEncoder(passwordEncoder);
+        security.allowFormAuthenticationForClients();
+        security.tokenKeyAccess("permitAll()");
+        security.checkTokenAccess("isAuthenticated()");
     }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.withClientDetails(clientDetailsService);
-        clients.inMemory().withClient("xinyuan").secret("e928cc15b2a13e05edc141912e872713").scopes("xinyuan1525")
-                .authorizedGrantTypes("authorization_code", "refresh_token","password")
-                .scopes("all", "read", "write")
-                .autoApprove(true);
+        clients.inMemory()
+                .withClient("xinyuan")
+                .secret("e928cc15b2a13e05edc141912e872713")
+                .authorizedGrantTypes("authorization_code", "refresh_token", "password")
+                .scopes("all", "read", "write");
     }
 
     @Override
@@ -82,5 +73,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .tokenServices(tokenServices())
                 .authenticationManager(authenticationManager);
     }
+
 
 }
