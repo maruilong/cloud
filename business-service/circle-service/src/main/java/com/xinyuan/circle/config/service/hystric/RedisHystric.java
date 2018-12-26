@@ -1,6 +1,6 @@
-package com.xinyuan.circle.service.hystric;
+package com.xinyuan.circle.config.service.hystric;
 
-import com.xinyuan.circle.service.RedisService;
+import com.xinyuan.circle.config.service.RedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

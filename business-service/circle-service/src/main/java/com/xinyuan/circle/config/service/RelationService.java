@@ -1,7 +1,6 @@
-package com.xinyuan.circle.service;
+package com.xinyuan.circle.config.service;
 
 import com.xinyuan.relation.client.RelationClient;
-import com.xinyuan.circle.service.hystric.RelationHystric;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**

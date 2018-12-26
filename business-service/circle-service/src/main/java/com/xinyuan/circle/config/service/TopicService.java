@@ -1,4 +1,4 @@
-package com.xinyuan.circle.service;
+package com.xinyuan.circle.config.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.codingapi.tx.annotation.TxTransaction;

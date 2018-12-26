@@ -1,4 +1,4 @@
-package com.xinyuan.circle.service;
+package com.xinyuan.circle.config.service;
 
 import com.xinyuan.relation.client.TestClient;
 import org.springframework.cloud.openfeign.FeignClient;

@@ -1,4 +1,4 @@
-package com.xinyuan.circle.service;
+package com.xinyuan.circle.config.service;
 
 import com.xinyuan.circle.entity.mysql.Auth;
 import com.xinyuan.circle.mapper.mysql.AuthRepository;
