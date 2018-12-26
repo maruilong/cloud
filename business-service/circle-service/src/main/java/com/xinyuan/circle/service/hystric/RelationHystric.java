@@ -1,6 +1,6 @@
-package com.xinyuan.circle.config.service.hystric;
+package com.xinyuan.circle.service.hystric;
 
-import com.xinyuan.circle.config.service.RelationService;
+import com.xinyuan.circle.service.RelationService;
 import com.xinyuan.relation.model.dto.RelationDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

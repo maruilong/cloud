@@ -1,4 +1,4 @@
-package com.xinyuan.circle.config.service;
+package com.xinyuan.circle.service;
 
 import com.xinyuan.base.common.web.Constants;
 import com.xinyuan.circle.entity.mysql.Answer;

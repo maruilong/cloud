@@ -1,4 +1,4 @@
-package com.xinyuan.circle.config.service;
+package com.xinyuan.circle.service;
 
 import com.xinyuan.circle.entity.mysql.Comment;
 import com.xinyuan.circle.mapper.mysql.CommentRepository;

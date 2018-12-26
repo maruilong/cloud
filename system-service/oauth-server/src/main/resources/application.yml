@@ -1,15 +1,10 @@
 #---------------------------------------------
 server:
-  port: 1510
+  port: 1360
 #---------------------------------------------
 spring:
   application:
-    name: relation-service
-  cloud:
-    config:
-      uri: http://localhost:1310/
-      profile: default
-      label: master
+    name: oauth-service
   jpa:
     generate-ddl: true
     show-sql: true
@@ -20,11 +15,15 @@ spring:
     username: root
     password: xinyuan
     driver-class-name: com.mysql.jdbc.Driver
-  rabbitmq:
-      host: localhost
-      port: 5672
-      username: guest
-      password: guest
+  redis:
+    host: 192.168.1.42
+#  rabbitmq:
+#      host: localhost
+#      port: 5672
+#      username: guest
+#      password: guest
+  cloud:
+    config: false
 #---------------------------------------------
 eureka:
   client:
@@ -46,8 +45,3 @@ management:
     health:
       show-details: ALWAYS
 #---------------------------------------------
-security:
-  oauth2:
-    resource:
-      id: ${spring.application.name}
-      user-info-uri: http://192.168.1.10:1360/user

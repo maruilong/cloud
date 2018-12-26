@@ -1,6 +1,6 @@
-package com.xinyuan.circle.config.service;
+package com.xinyuan.circle.service;
 
-import com.xinyuan.circle.config.service.hystric.RedisHystric;
+import com.xinyuan.circle.service.hystric.RedisHystric;
 import com.xinyuan.redis.client.RedisClient;
 import org.springframework.cloud.openfeign.FeignClient;
 

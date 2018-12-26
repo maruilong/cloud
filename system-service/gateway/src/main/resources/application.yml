@@ -25,6 +25,10 @@ zuul:
     relation:
       path: /relation/**
       serviceId: relation-service
+    #认证服务
+    oauth:
+      path: /oauth/**
+      serviceId: oauth-service
   host:
     max-total-connections: 200
     max-per-route-connections: 20
@@ -46,4 +50,5 @@ security:
   oauth2:
     resource:
       id: ${spring.application.name}
-      user-info-uri: http://localhost:1343/user
+      user-info-uri: http://192.168.1.10:1360/user
+

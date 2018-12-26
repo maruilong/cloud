@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 public interface TestClient {
 
-    @RequestMapping(value = "/api/relation/port", method = RequestMethod.GET)
+    @RequestMapping(value = "/relation/port", method = RequestMethod.GET)
     String showPort();
 }

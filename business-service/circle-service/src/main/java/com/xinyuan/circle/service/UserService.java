@@ -1,4 +1,4 @@
-package com.xinyuan.circle.config.service;
+package com.xinyuan.circle.service;
 
 import com.xinyuan.base.common.service.ParamCondition;
 import com.xinyuan.base.common.service.SelectParam;

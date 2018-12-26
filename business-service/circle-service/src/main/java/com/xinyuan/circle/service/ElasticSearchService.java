@@ -1,6 +1,6 @@
-package com.xinyuan.circle.config.service;
+package com.xinyuan.circle.service;
 
-import com.xinyuan.circle.config.service.hystric.ElasticSearchHystric;
+import com.xinyuan.circle.service.hystric.ElasticSearchHystric;
 import com.xinyuan.elasticsearch.client.ElasticSearchClient;
 import org.springframework.cloud.openfeign.FeignClient;
 

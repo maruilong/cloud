@@ -1,6 +1,6 @@
-package com.xinyuan.circle.config.service.hystric;
+package com.xinyuan.circle.service.hystric;
 
-import com.xinyuan.circle.config.service.ElasticSearchService;
+import com.xinyuan.circle.service.ElasticSearchService;
 import com.xinyuan.elasticsearch.AddDataDTO;
 import org.springframework.stereotype.Component;
 
