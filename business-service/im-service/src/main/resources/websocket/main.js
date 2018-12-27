@@ -7,7 +7,7 @@ var colors = [
 var currentUser = $("#current-user").text();
 
 var messageForm = document.querySelector('#messageForm');
-var messageInput = document.querySelector('#message');
+var messageInput = document.querySelector('#content');
 var messageArea = document.querySelector('#messageArea');
 
 //连接
@@ -63,13 +63,13 @@ function showMessage(message) {
     var messageElement = document.createElement('li');
 
     if (message.type === 'JOIN') {
-        messageElement.classList.add('event-message');
+        messageElement.classList.add('event-content');
         message.content = message.sender + ' 加入！';
     } else if (message.type === 'LEAVE') {
-        messageElement.classList.add('event-message');
+        messageElement.classList.add('event-content');
         message.content = message.sender + ' 离开！';
     } else if (message.sender === currentUser) {
-        messageElement.classList.add('chat-message-me');
+        messageElement.classList.add('chat-content-me');
         var avatarElement = document.createElement('i');
         var avatarText = document.createTextNode(message.sender[0]);
         avatarElement.appendChild(avatarText);
@@ -82,7 +82,7 @@ function showMessage(message) {
         usernameElement.appendChild(usernameText);
         messageElement.appendChild(usernameElement);
     } else {
-        messageElement.classList.add('chat-message');
+        messageElement.classList.add('chat-content');
         var avatarElement = document.createElement('i');
         var avatarText = document.createTextNode(message.sender[0]);
         avatarElement.appendChild(avatarText);

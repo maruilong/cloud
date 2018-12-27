@@ -16,8 +16,8 @@ public class StreamReceiver {
     private Logger logger = LoggerFactory.getLogger(StreamReceiver.class);
 
 //    @StreamListener(StreamClient.INPUT)
-//    public void receive(String message) {
-//        logger.info("StreamReceiver: {}", message);
+//    public void receive(String content) {
+//        logger.info("StreamReceiver: {}", content);
 //
 //    }
 

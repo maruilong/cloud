@@ -8,9 +8,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -37,7 +35,7 @@ public class BroadcastCtl {
     @MessageMapping("/receive")
     @SendTo("/exchange/rabbitmq/get-response")
     public ResponseMessage toGroup(RequestMessage requestMessage) {
-        log.info("receive message = {}", JSONObject.toJSONString(requestMessage));
+        log.info("receive content = {}", JSONObject.toJSONString(requestMessage));
         ResponseMessage responseMessage = new ResponseMessage();
         responseMessage.setMessage("BroadcastCtl receive [" + count.incrementAndGet() + "] records");
         return responseMessage;
@@ -53,12 +51,6 @@ public class BroadcastCtl {
     public ResponseMessage toUser(RequestMessage requestMessage) {
         ResponseMessage responseMessage = new ResponseMessage();
         return responseMessage;
-    }
-
-    @RequestMapping(value = "/index")
-    public String index(HttpServletRequest req) {
-        System.out.println(req.getRemoteHost());
-        return "webSocket/index";
     }
 
 }

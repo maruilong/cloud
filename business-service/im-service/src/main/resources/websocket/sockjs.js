@@ -626,7 +626,7 @@ var URL = require('url-parse')
   , EventTarget = require('./event/eventtarget')
   , loc = require('./location')
   , CloseEvent = require('./event/close')
-  , TransportMessageEvent = require('./event/trans-message')
+  , TransportMessageEvent = require('./event/trans-content')
   , InfoReceiver = require('./info-receiver')
   ;
 
@@ -1265,7 +1265,7 @@ defineProperties(ArrayPrototype, {
 
         // If no callback function or if callback is not a callable function
         if (!isFunction(fun)) {
-            throw new TypeError(); // TODO message
+            throw new TypeError(); // TODO content
         }
 
         while (++i < length) {
@@ -1892,7 +1892,7 @@ module.exports = IframeTransport;
 
 // The simplest and most robust transport, using the well-know cross
 // domain hack - JSONP. This transport is quite inefficient - one
-// message could use up to one http request. But at least it works almost
+// content could use up to one http request. But at least it works almost
 // everywhere.
 // Known limitations:
 //   o you will get a spinning cursor
@@ -2010,8 +2010,8 @@ BufferedSender.prototype.send = function(message) {
   }
 };
 
-// For polling transports in a situation when in the message callback,
-// new message is being send. If the sending connection was started
+// For polling transports in a situation when in the content callback,
+// new content is being send. If the sending connection was started
 // before receiving one, it is possible to saturate the network and
 // timeout due to the lack of receiving socket. To avoid that we delay
 // sending messages by some small time, in order to let receiving
@@ -2194,7 +2194,7 @@ function SenderReceiver(transUrl, urlSuffix, senderFunc, Receiver, AjaxObject) {
 
   this.poll = new Polling(Receiver, pollUrl, AjaxObject);
   this.poll.on('message', function(msg) {
-    debug('poll message', msg);
+    debug('poll content', msg);
     self.emit('message', msg);
   });
   this.poll.once('close', function(code, reason) {
@@ -2953,7 +2953,7 @@ function WebSocketTransport(transUrl, ignore, options) {
 
   this.ws = new WebsocketDriver(this.url, [], options);
   this.ws.onmessage = function(e) {
-    debug('message event', e.data);
+    debug('content event', e.data);
     self.emit('message', e.data);
   };
   // Firefox has an interesting bug. If a websocket connection is
@@ -3287,7 +3287,7 @@ module.exports = {
     } else if (global.document && global.attachEvent) {
       // IE quirks.
       // According to: http://stevesouders.com/misc/test-postmessage.php
-      // the message gets delivered only to 'document', not 'window'.
+      // the content gets delivered only to 'document', not 'window'.
       global.document.attachEvent('on' + event, listener);
       // I get 'window' for ie8.
       global.attachEvent('on' + event, listener);

@@ -24,13 +24,13 @@ public class NoticeClient {
      * @SendTo默认 消息将被发送到与传入消息相同的目的地
      */
     @MessageMapping("/notice")
-    @SendTo("/topic/notice")
+    @SendTo("/topic/notice/getResponse")
     public ResponseMessage notice(RequestMessage requestMessage) {
         log.info("通知消息:" + JSONObject.toJSONString(requestMessage));
         ResponseMessage responseMessage = new ResponseMessage();
         //sender以后是从登录系统里面取出来
         responseMessage.setSender(requestMessage.getSender());
-        responseMessage.setMessage(requestMessage.getMessage());
+        responseMessage.setMessage(requestMessage.getContent());
         return responseMessage;
     }
 }
