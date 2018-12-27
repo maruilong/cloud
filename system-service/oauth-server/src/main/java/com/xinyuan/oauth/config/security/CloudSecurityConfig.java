@@ -41,7 +41,7 @@ public class CloudSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/oauth/token").permitAll()
                 .anyRequest().authenticated();
-
+        http.cors();
         http.csrf().disable();
     }
 }

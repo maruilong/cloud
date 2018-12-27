@@ -16,8 +16,8 @@ spring:
     password: xinyuan
     driver-class-name: com.mysql.jdbc.Driver
   rabbitmq:
-      host: 192.168.1.42
-      port: 5672
+      host: 192.168.1.14
+      port: 5673
 #---------------------------------------------
 eureka:
   client:
