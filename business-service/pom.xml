@@ -16,6 +16,7 @@
     <modules>
         <module>circle-service</module>
         <module>relation-service</module>
+        <module>im-service</module>
     </modules>
 
     <dependencies>
