@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.config.ChannelRegistration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 /**
  * @author liang
@@ -19,7 +19,7 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 @Configuration
 @MessageMapping
 @EnableWebSocketMessageBroker
-public class WebSocketMessageBrokerConfigurer extends AbstractWebSocketMessageBrokerConfigurer {
+public class WebSocketMessageBrokerConfigurerImpl implements WebSocketMessageBrokerConfigurer {
 
     @Autowired
     private MyHandShakeInterceptor handShakeInterceptor;
@@ -37,8 +37,8 @@ public class WebSocketMessageBrokerConfigurer extends AbstractWebSocketMessageBr
         registry.addEndpoint("/websocket-rabbitmq")
                 // 添加允许跨域访问
                 .setAllowedOrigins("*")
-                .withSockJS()
-                .setInterceptors(handShakeInterceptor);
+                .withSockJS();
+//                .setInterceptors(handShakeInterceptor);
     }
 
     @Override
@@ -52,11 +52,11 @@ public class WebSocketMessageBrokerConfigurer extends AbstractWebSocketMessageBr
         registry
                 // "STOMP broker relay"处理所有消息将消息发送到外部的消息代理
                 .enableStompBrokerRelay("/exchange", "/topic", "/queue", "/amq/queue")
-                .setRelayHost("192.168.1.14")
-                .setClientLogin("admin")
-                .setClientPasscode("123456")
-                .setSystemLogin("admin")
-                .setSystemPasscode("123456")
+                .setRelayHost("192.168.1.189")
+                .setClientLogin("mrl")
+                .setClientPasscode("shinian")
+                .setSystemLogin("mrl")
+                .setSystemPasscode("shinian")
                 .setSystemHeartbeatSendInterval(5000)
                 .setSystemHeartbeatReceiveInterval(4000);
     }

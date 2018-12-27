@@ -23,14 +23,16 @@ public class PrivateChatClient {
     @Autowired
     private SimpMessagingTemplate template;
 
-    @MessageMapping(value = "queue/sendToUser")
+    @MessageMapping(value = "sendToUser")
     public void sendToUser(RequestMessage requestMessage) {
+
+        log.info("单聊:" + requestMessage);
 
         ResponseMessage responseMessage = new ResponseMessage();
         responseMessage.setSender(requestMessage.getSender());
-        responseMessage.setMessage(requestMessage.getContent());
+        responseMessage.setContent(requestMessage.getContent());
         responseMessage.setName(requestMessage.getName());
 
-        template.convertAndSendToUser(requestMessage.getName(), "/private", JSON.toJSONString(responseMessage));
+        template.convertAndSendToUser(requestMessage.getName(), "/queue/private", JSON.toJSONString(responseMessage));
     }
 }

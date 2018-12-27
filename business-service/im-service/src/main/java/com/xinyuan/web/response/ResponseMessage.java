@@ -10,7 +10,7 @@ public class ResponseMessage {
 
     private String sender;
 
-    private String message;
+    private String content;
 
     private String name;
 }
