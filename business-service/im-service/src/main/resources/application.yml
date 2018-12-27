@@ -1,6 +1,15 @@
 #---------------------------------------------
 server:
-  port: 9042
+  port: 1520
+#---------------------------------------------
+spring:
+  application:
+    name: im-service
+  rabbitmq:
+    host: 192.168.1.14
+    port: 5673
+    username: admin
+    password: 123456
 #---------------------------------------------
 eureka:
   client:

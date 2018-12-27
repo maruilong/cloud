@@ -68,4 +68,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>im-service</finalName>
+    </build>
+
 </project>

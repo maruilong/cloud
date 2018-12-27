@@ -29,6 +29,10 @@ zuul:
     oauth:
       path: /oauth/**
       serviceId: oauth-service
+    #认证服务
+    im:
+      path: /im/**
+      serviceId: im-service
   host:
     max-total-connections: 200
     max-per-route-connections: 20
