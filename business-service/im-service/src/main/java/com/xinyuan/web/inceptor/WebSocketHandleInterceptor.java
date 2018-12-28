@@ -8,11 +8,11 @@ import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.ChannelInterceptor;
 import org.springframework.messaging.support.MessageHeaderAccessor;
-import org.springframework.stereotype.Component;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.security.Principal;
 
-@Component
 public class WebSocketHandleInterceptor implements ChannelInterceptor {
 
     @Override
@@ -23,6 +23,7 @@ public class WebSocketHandleInterceptor implements ChannelInterceptor {
             if (StringUtils.isEmpty(username)) {
                 return null;
             }
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             // 绑定user
             Principal principal = new UserPrincipal(username);
             accessor.setUser(principal);

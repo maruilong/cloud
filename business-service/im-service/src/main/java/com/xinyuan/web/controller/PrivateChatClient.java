@@ -32,7 +32,7 @@ public class PrivateChatClient {
         responseMessage.setSender(requestMessage.getSender());
         responseMessage.setContent(requestMessage.getContent());
         responseMessage.setName(requestMessage.getName());
-
+        template.convertAndSendToUser(requestMessage.getSender(), "/queue/private", JSON.toJSONString(responseMessage));
         template.convertAndSendToUser(requestMessage.getName(), "/queue/private", JSON.toJSONString(responseMessage));
     }
 }
