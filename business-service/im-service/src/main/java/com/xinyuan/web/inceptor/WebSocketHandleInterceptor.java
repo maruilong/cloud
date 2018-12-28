@@ -8,6 +8,8 @@ import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.ChannelInterceptor;
 import org.springframework.messaging.support.MessageHeaderAccessor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.security.Principal;
 
@@ -17,14 +19,13 @@ public class WebSocketHandleInterceptor implements ChannelInterceptor {
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
         StompHeaderAccessor accessor = MessageHeaderAccessor.getAccessor(message, StompHeaderAccessor.class);
         if (StompCommand.CONNECT.equals(accessor.getCommand())) {
-            String username = accessor.getFirstNativeHeader("username");
-            if (StringUtils.isEmpty(username)) {
-                return null;
+            String header = accessor.getFirstNativeHeader("Authorization");
+            if (StringUtils.isNotEmpty(header) && header.startsWith("Bearer")) {
+                Principal user = accessor.getUser();
+                // 绑定user
+                Principal principal = new UserPrincipal(header.split(" ")[1]);
+                accessor.setUser(principal);
             }
-//            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            // 绑定user
-            Principal principal = new UserPrincipal(username);
-            accessor.setUser(principal);
         }
         return message;
     }
