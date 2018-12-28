@@ -54,6 +54,7 @@ public class WebSocketMessageBrokerConfigurerImpl implements WebSocketMessageBro
                 // "STOMP broker relay"处理所有消息将消息发送到外部的消息代理
                 .enableStompBrokerRelay("/exchange", "/topic", "/queue", "/amq/queue")
                 .setRelayHost("192.168.1.189")
+//                .setRelayHost("5673")
                 .setClientLogin("mrl")
                 .setClientPasscode("shinian")
                 .setSystemLogin("mrl")
