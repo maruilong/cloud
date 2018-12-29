@@ -50,4 +50,4 @@ security:
   oauth2:
     resource:
       id: ${spring.application.name}
-      user-info-uri: http://192.168.1.10:1530/user
+      user-info-uri: http://192.168.1.10:1360/user

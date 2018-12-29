@@ -60,5 +60,5 @@ security:
   oauth2:
     resource:
       id: ${spring.application.name}
-      user-info-uri: http://localhost:1530/user
+      user-info-uri: http://localhost:1360/user
 
