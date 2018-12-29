@@ -1,0 +1,29 @@
+#---------------------------------------------
+spring:
+  application:
+    name: tx-php-server-sidecar
+#---------------------------------------------
+#服务注册中心端口号
+server:
+  port: 8203
+#---------------------------------------------
+#服务注册中心实例的主机名、端口
+#是否向服务注册中心注册自己
+#是否检索服务
+#服务注册中心的配置内容，指定服务注册中心的位置
+eureka:
+  port: 8200
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
+#---------------------------------------------
+sidecar:
+  port: 1215
+  instance:
+    hostname: localhost
+  health-uri: http://${sidecar.instance.hostname}:${sidecar.port}/health
+  #---------------------------------------------
