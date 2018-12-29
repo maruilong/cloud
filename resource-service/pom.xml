@@ -15,6 +15,7 @@
         <module>redis-service</module>
         <module>search-service</module>
         <module>stream-service</module>
+        <module>sidecar-php-service</module>
     </modules>
 
 </project>
