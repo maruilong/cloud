@@ -5,11 +5,6 @@ server:
 spring:
   application:
     name: user-service
-  cloud:
-    config:
-      uri: http://localhost:1310/
-      profile: default
-      label: master
   jpa:
     generate-ddl: true
     show-sql: true
@@ -47,3 +42,9 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+#---------------------------------------------
+security:
+  oauth2:
+    resource:
+      id: ${spring.application.name}
+      user-info-uri: http://192.168.1.189:1360/user
